@@ -2,9 +2,7 @@ package Classes;
 
 import java.math.BigInteger;
 
-public class Student {
-    private String name; // do i even need to comment this.
-    private BigInteger ID; // student ID
+public class Student extends Person{
     private boolean present; // today's attendance state
     private int past; // number of times student was absent
     private String Excuse; // excuse for last time student was absent
@@ -27,21 +25,6 @@ public class Student {
         Excuse = excuse;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public BigInteger getID() {
-        return ID;
-    }
-
-    public void setID(BigInteger ID) {
-        this.ID = ID;
-    }
 
     public boolean isPresent() {
         return present;

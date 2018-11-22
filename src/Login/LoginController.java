@@ -53,6 +53,13 @@ public class LoginController implements Initializable {
         } else {
             System.out.println("Nah Not today ma dude");
             // display the wrong information text in red if data doesn't match available one.
+            id.validate();
+            pass.validate();
+            id.focusedProperty().addListener((observableValue, oldValue, newValue) -> {
+                if (!newValue) {
+                    id.validate();
+                }
+            });
             wrongData.setVisible(true);
         }
     }

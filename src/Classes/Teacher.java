@@ -2,10 +2,10 @@ package Classes;
 
 import javafx.scene.image.Image;
 
-public class Teacher {
-    private String name; //
+import java.math.BigInteger;
+
+public class Teacher extends Person{
     private String Pass; // login password
-    private int ID; // login and genera ID
     private boolean gender; // 0 is male and 1 is female
     private String email;
     private String XP; // experience (dunno why i called it XP)
@@ -14,7 +14,7 @@ public class Teacher {
     public Teacher() {
     }
 
-    public Teacher(String name, String pass, int ID, boolean gender, String email, String XP) {
+    public Teacher(String name, String pass, BigInteger ID, boolean gender, String email, String XP) {
         this.name = name;
         Pass = pass;
         this.ID = ID;
@@ -24,7 +24,7 @@ public class Teacher {
         this.portrait = new Image("resources/default.png");
     }
 
-    public Teacher(String name, String pass, int ID, boolean gender, String email, String XP, Image portrait) {
+    public Teacher(String name, String pass, BigInteger ID, boolean gender, String email, String XP, Image portrait) {
         this.name = name;
         Pass = pass;
         this.ID = ID;
@@ -34,14 +34,7 @@ public class Teacher {
         this.portrait = portrait;
     }
 
-    public String getName() {
-        return name;
-    }
 
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public String getPass() {
         return Pass;
@@ -49,30 +42,6 @@ public class Teacher {
 
     public void setPass(String pass) {
         Pass = pass;
-    }
-
-    public int getID() {
-        return ID;
-    }
-
-    public void setID(int ID) {
-        this.ID = ID;
-    }
-
-    public boolean isGender() {
-        return gender;
-    }
-
-    public void setGender(boolean gender) {
-        this.gender = gender;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     public String getXP() {

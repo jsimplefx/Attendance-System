@@ -25,7 +25,6 @@ public class SidebarController implements Initializable {
       not actually the whole window
        (this allows us to make the sidebar permanent and doesn't move
        */
-
     @FXML private BorderPane homePane;
 
     @FXML private Label UserName;
@@ -92,6 +91,7 @@ public class SidebarController implements Initializable {
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
     }
 
 }

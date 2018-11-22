@@ -16,7 +16,7 @@
     </ImageView>
    <JFXTextField fx:id="id" focusColor="#607d8a" labelFloat="true" layoutX="116.0" layoutY="170.0" prefHeight="30.0" prefWidth="280.0" promptText="User ID" unFocusColor="#757575" />
    <JFXPasswordField fx:id="pass" focusColor="#607d8a" labelFloat="true" layoutX="116.0" layoutY="241.0" prefHeight="30.0" prefWidth="280.0" promptText="Password" unFocusColor="#607d8a" />
-   <JFXButton buttonType="RAISED" layoutX="200.0" layoutY="306.0" onAction="#dataCheck" prefHeight="41.0" prefWidth="112.0" ripplerFill="#16753b" style="-fx-background-color: #607D8A;" text="Login" textFill="#fcfafa" />
+   <JFXButton buttonType="RAISED" layoutX="200.0" layoutY="306.0" onAction="#dataCheck" prefHeight="41.0" prefWidth="112.0" ripplerFill="#283593" style="-fx-background-color: #3f51b5;" text="Login" textFill="#fcfafa" />
    <MaterialDesignIconView glyphName="LOCK" layoutX="83.0" layoutY="273.0" size="25" />
    <MaterialDesignIconView glyphName="ACCOUNT_CIRCLE" layoutX="82.0" layoutY="203.0" size="25" />
    <Label fx:id="wrongData" layoutX="192.0" layoutY="360.0" prefHeight="25.0" prefWidth="129.0" text="Wrong Information!" textFill="#d5443c" visible="false" />

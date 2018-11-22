@@ -11,24 +11,20 @@ import java.util.ResourceBundle;
 
 public class AboutController implements Initializable {
     @FXML
-    private ImageView portrait = new ImageView();
+    private ImageView portrait;
 
     @FXML
-    private Label gender = new Label();
+    private Label gender;
 
     @FXML
-    private Label name = new Label();
+    private Label name;
 
     @FXML
-    private Label ID = new Label();
+    private Label ID;
 
     @FXML
-    private Label email = new Label();
+    private static Label email;
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-
-    }
     public void setLabels(Teacher teacher){
         portrait.setImage(teacher.getPortrait());
         name.setText(teacher.getName());
@@ -43,4 +39,10 @@ public class AboutController implements Initializable {
         gender.setText(gen);
 
     }
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+    }
+
+
 }
