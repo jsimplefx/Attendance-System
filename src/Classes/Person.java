@@ -1,16 +1,14 @@
 package Classes;
 
-import java.math.BigInteger;
-
 public class Person {
     String name;
-    BigInteger ID;
+    int ID;
     boolean gender;
     String email;
 
     public Person(){
     }
-    public Person(String name, BigInteger ID, boolean gender, String email) {
+    public Person(String name, int ID, boolean gender, String email) {
         this.name = name;
         this.ID = ID;
         this.gender = gender;
@@ -25,11 +23,11 @@ public class Person {
         this.name = name;
     }
 
-    public BigInteger getID() {
+    public int getID() {
         return ID;
     }
 
-    public void setID(BigInteger ID) {
+    public void setID(int ID) {
         this.ID = ID;
     }
 

@@ -1,6 +1,5 @@
 package Login;
 
-import Classes.Teacher;
 import Sidebar.SidebarController;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
@@ -18,8 +17,11 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 public class LoginController implements Initializable {
+
+    private LoginModel model = new LoginModel();
 
     @FXML private JFXTextField id;
 
@@ -27,16 +29,8 @@ public class LoginController implements Initializable {
 
     @FXML private Label wrongData;
 
-    @FXML private void dataCheck(ActionEvent event) throws IOException {
-        // create a sample teacher first
-        Teacher Abubakar = new Teacher();
-        Abubakar.setID(1625897);
-        Abubakar.setName("Abubakar Yagoub Ibrahim");
-        Abubakar.setEmail("Abubakaryagob@gmail.com");
-        Abubakar.setGender(false);
-        Abubakar.setPass("blacksuan19");
-        Abubakar.setXP("bla bla bla");
-        if (Integer.parseInt(id.getText()) == Abubakar.getID() && pass.getText().equals(Abubakar.getPass())) {
+    @FXML private void dataCheck(ActionEvent event) throws IOException, SQLException {
+        if (model.isCorrect(id.getText(), pass.getText())){
             // switch to the home scene
             System.out.println("Welcome back fam!!"); // some background action.
             FXMLLoader loader = new FXMLLoader();
@@ -44,17 +38,14 @@ public class LoginController implements Initializable {
             Parent homeParent = loader.load();
             Scene home = new Scene(homeParent);
             SidebarController controller = loader.getController();
-            controller.logoName(Abubakar); // passing the object.
             //This line gets the Stage information
             Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-            window.setTitle("Sidebar");
+            window.setTitle("Dashboard");
             window.setScene(home);
             window.show();
         } else {
             System.out.println("Nah Not today ma dude");
             // display the wrong information text in red if data doesn't match available one.
-            id.validate();
-            pass.validate();
             id.focusedProperty().addListener((observableValue, oldValue, newValue) -> {
                 if (!newValue) {
                     id.validate();

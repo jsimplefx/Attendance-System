@@ -1,6 +1,5 @@
 package Sidebar;
 
-import Classes.Teacher;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -28,18 +27,6 @@ public class SidebarController implements Initializable {
     @FXML private BorderPane homePane;
 
     @FXML private Label UserName;
-
-    // set the header text to teacher name
-    public void logoName(Teacher teacher) {
-        // only show the first name of the lecturer.
-        UserName.setStyle("-fx-font-weight: bold");
-        String[] first = teacher.getName().split(" ");
-        if (!teacher.isGender()) {
-            UserName.setText("MR. " + first[0].toUpperCase());
-        } else if (teacher.isGender()){
-            UserName.setText("MS. " + first[0].toUpperCase());
-        }
-    }
 
     // handle buttons press events.
     @FXML private void DashboardBtnPressed(MouseEvent event) throws IOException {
@@ -91,7 +78,8 @@ public class SidebarController implements Initializable {
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        UserName.setStyle("-fx-font-weight: bold");
+        UserName.setText("Welcome");
     }
 
 }

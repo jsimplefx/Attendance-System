@@ -23,7 +23,7 @@ public class AboutController implements Initializable {
     private Label ID;
 
     @FXML
-    private static Label email;
+    private Label email;
 
     public void setLabels(Teacher teacher){
         portrait.setImage(teacher.getPortrait());
