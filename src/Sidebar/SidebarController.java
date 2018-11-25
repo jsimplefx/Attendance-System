@@ -78,6 +78,12 @@ public class SidebarController implements Initializable {
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        // set the dashboard as default view when user logs in
+        try {
+            loadPane("../Dashboard/Dashboard");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         UserName.setStyle("-fx-font-weight: bold");
         UserName.setText("Welcome");
     }

@@ -18,7 +18,7 @@ public class LoginModel {
         try {
             return !con.isClosed();
         } catch (SQLException e) {
-            System.out.println(e);
+            e.printStackTrace();
             return false;
         }
     }

@@ -1,0 +1,14 @@
+.top_stats{
+
+  -fx-border-radius: 10 10 0 0;
+  -fx-background-radius: 10 10 0 0;
+
+  /* top-left, top-right, bottom-right, and bottom-left corners, in that order. */
+}
+.bottom_stats{
+
+  -fx-border-radius: 0 0 10 10;
+  -fx-background-radius: 0 0 10 10;
+
+  /* top-left, top-right, bottom-right, and bottom-left corners, in that order. */
+}

@@ -40,7 +40,7 @@ public class LoginController implements Initializable {
             SidebarController controller = loader.getController();
             //This line gets the Stage information
             Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-            window.setTitle("Dashboard");
+            window.setTitle("Attendance System");
             window.setScene(home);
             window.show();
         } else {
