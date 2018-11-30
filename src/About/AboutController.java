@@ -30,13 +30,7 @@ public class AboutController implements Initializable {
         name.setText(teacher.getName());
         ID.setText(Integer.toString(teacher.getID()));
         email.setText(teacher.getEmail());
-        String gen;
-        if (!teacher.isGender()){
-            gen = "Male";
-        } else {
-            gen = "Female";
-        }
-        gender.setText(gen);
+        gender.setText(teacher.getGender());
 
     }
     @Override

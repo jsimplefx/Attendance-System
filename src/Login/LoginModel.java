@@ -1,6 +1,6 @@
 package Login;
 
-import Database.Connect;
+import dbConnection.Connect;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -32,6 +32,7 @@ public class LoginModel {
             statement.setString(1, User);
             statement.setString(2, Pass);
             set = statement.executeQuery();
+            con.close();
         return set.next();
     }
 }

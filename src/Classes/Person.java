@@ -3,16 +3,11 @@ package Classes;
 public class Person {
     String name;
     int ID;
-    boolean gender;
+    String gender;
     String email;
+    private long phone;
 
-    public Person(){
-    }
-    public Person(String name, int ID, boolean gender, String email) {
-        this.name = name;
-        this.ID = ID;
-        this.gender = gender;
-        this.email = email;
+     Person() {
     }
 
     public String getName() {
@@ -31,11 +26,11 @@ public class Person {
         this.ID = ID;
     }
 
-    public boolean isGender() {
+    public String getGender() {
         return gender;
     }
 
-    public void setGender(boolean gender) {
+    public void setGender(String gender) {
         this.gender = gender;
     }
 
@@ -45,5 +40,13 @@ public class Person {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public long getPhone() {
+        return phone;
+    }
+
+    public void setPhone(long phone) {
+        this.phone = phone;
     }
 }

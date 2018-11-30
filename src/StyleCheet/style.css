@@ -12,3 +12,42 @@
 
   /* top-left, top-right, bottom-right, and bottom-left corners, in that order. */
 }
+.label-header {
+    -fx-font-family: "SF Compact Display";
+    -fx-text-fill: white;
+    -fx-opacity: 1;
+}
+.table-view {
+    -fx-base: #95AFC0;
+    -fx-control-inner-background: #95AFC0;
+    -fx-background-color: #95AFC0;
+    -fx-text-fill: white;
+    -fx-table-cell-border-color: transparent;
+    -fx-table-header-border-color: transparent;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-size: 35;
+    -fx-border-width: 0 0 1 0;
+    -fx-background-color: transparent;
+    -fx-border-color:
+        transparent
+        transparent
+        derive(-fx-base, 80%)
+        transparent;
+    -fx-border-insets: 0 10 1 0;
+}
+
+.table-view .column-header .label {
+    -fx-font-family: "SF Compact Display";
+    -fx-alignment: center;
+    -fx-opacity: 1;
+}
+
+.table-view:focused .table-row-cell:filled:focused:selected {
+    -fx-background-color: -fx-focus-color;
+}

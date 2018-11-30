@@ -10,7 +10,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="500.0" style="-fx-background-color: #e8eaf6;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Login.LoginController">
+<AnchorPane prefHeight="400.0" prefWidth="500.0" style="-fx-background-color: #95afc0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Login.LoginController">
     <ImageView fitHeight="118.0" fitWidth="430.0" layoutX="20.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
         <Image url="@../resources/IIUM.png" />
     </ImageView>

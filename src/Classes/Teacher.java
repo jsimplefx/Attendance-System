@@ -11,7 +11,7 @@ public class Teacher extends Person{
     public Teacher() {
     }
 
-    public Teacher(String name, String pass, int ID, boolean gender, String email, String[] subjects, String XP) {
+    public Teacher(String name, String pass, int ID, String gender, String email, String[] subjects, String XP) {
         this.name = name;
         Pass = pass;
         this.ID = ID;
@@ -22,7 +22,7 @@ public class Teacher extends Person{
         this.portrait = new Image("resources/default.png");
     }
 
-    public Teacher(String name, String pass, int ID, boolean gender, String email, String XP, String[] subjects,  Image portrait) {
+    public Teacher(String name, String pass, int ID, String gender, String email, String XP, String[] subjects,  Image portrait) {
         this.name = name;
         Pass = pass;
         this.ID = ID;
