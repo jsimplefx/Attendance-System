@@ -9,6 +9,8 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -19,6 +21,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class ListController implements Initializable {
@@ -81,13 +84,22 @@ public class ListController implements Initializable {
     @FXML
     void deleteRow(){
         Student stud = list_table.getSelectionModel().getSelectedItem();
-        String query = String.format("delete from Students where id=%d", stud.getID());
-        try {
-            PreparedStatement pst = Objects.requireNonNull(con).prepareStatement(query);
-            pst.execute();
-            loadTable();
-        } catch (SQLException e){
-            e.printStackTrace();
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Delete Record");
+        alert.setHeaderText("Are you sure You want to delete record with ID: " + stud.getID() + "?");
+        ButtonType Yes = new ButtonType("Yes");
+        ButtonType No = new ButtonType("No");
+        alert.getButtonTypes().setAll(Yes, No);
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == Yes) {
+            String query = String.format("delete from Students where id=%d", stud.getID());
+            try {
+                PreparedStatement pst = Objects.requireNonNull(con).prepareStatement(query);
+                pst.execute();
+                loadTable();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
     }
 
