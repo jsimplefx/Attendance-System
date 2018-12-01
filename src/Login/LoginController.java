@@ -5,6 +5,9 @@ import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.validation.NumberValidator;
 import com.jfoenix.validation.RequiredFieldValidator;
+import dbConnection.Connect;
+import javafx.beans.binding.Bindings;
+import javafx.beans.binding.BooleanBinding;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,11 +15,13 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 public class LoginController implements Initializable {
@@ -28,6 +33,11 @@ public class LoginController implements Initializable {
     @FXML private JFXPasswordField pass;
 
     @FXML private Label wrongData;
+
+    @FXML
+    private Button logBtn;
+
+    private Connection con = Connect.getConnect();
 
     @FXML private void dataCheck(ActionEvent event) throws IOException, SQLException {
         if (model.isCorrect(id.getText(), pass.getText())){
@@ -53,10 +63,14 @@ public class LoginController implements Initializable {
             });
             wrongData.setVisible(true);
         }
+        con.close();
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        // disable login button if neither text fields is empty
+        BooleanBinding booleanBind = Bindings.and(id.textProperty().isEmpty(), pass.textProperty().isEmpty());
+        logBtn.disableProperty().bind(booleanBind);
         // validator to make sure id field is only numbers and not empty and password filed is not empty.
         NumberValidator numberValidator = new NumberValidator();
         RequiredFieldValidator fieldValidate = new RequiredFieldValidator();

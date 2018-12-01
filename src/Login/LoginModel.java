@@ -14,7 +14,7 @@ public class LoginModel {
         con = Connect.getConnect();
     }
 
-    public boolean isConnected() {
+    boolean isConnected() {
         try {
             return !con.isClosed();
         } catch (SQLException e) {
@@ -32,7 +32,6 @@ public class LoginModel {
             statement.setString(1, User);
             statement.setString(2, Pass);
             set = statement.executeQuery();
-            con.close();
         return set.next();
     }
 }
