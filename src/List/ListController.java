@@ -26,7 +26,9 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class ListController implements Initializable {
-
+    /* TODO handle table editing
+       TODO handle add button click
+     *  */
 
     @FXML
     private TableView<Student> list_table;
@@ -61,14 +63,17 @@ public class ListController implements Initializable {
     @FXML
     private JFXButton delBtn;
 
+    // an observable list of students
     private ObservableList<Student> students = FXCollections.observableArrayList();
 
-    private Connection con = Connect.getConnect();
+    // get connection
+    private Connection conns = Connect.getConnect();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        loadTable();
+        loadTable(); // load table on class start
+        // define what each column is going to hold (based on student class)
         id_col.setCellValueFactory(new PropertyValueFactory<>("ID"));
         name_col.setCellValueFactory(new PropertyValueFactory<>("name"));
         past_col.setCellValueFactory(new PropertyValueFactory<>("past"));
@@ -81,7 +86,6 @@ public class ListController implements Initializable {
                 .and(abs_field.textProperty().isEmpty())
                 .and(mail_field.textProperty().isEmpty());
         addBtn.disableProperty().bind(isData);
-
     }
 
     @FXML
@@ -90,8 +94,15 @@ public class ListController implements Initializable {
     }
 
     @FXML
-    void deleteRow(){
-        Student stud = list_table.getSelectionModel().getSelectedItem();
+    void deleteRow(ActionEvent event){
+
+        // if connection is closed get it again
+        try {
+            if (conns.isClosed()) conns = Connect.getConnect();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        Student stud = list_table.getSelectionModel().getSelectedItem(); // get selected item
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Delete Record");
         alert.setHeaderText("Are you sure You want to delete record with ID: " + stud.getID() + "?");
@@ -102,9 +113,11 @@ public class ListController implements Initializable {
         if (result.get() == Yes) {
             String query = String.format("delete from Students where id=%d", stud.getID());
             try {
-                PreparedStatement pst = Objects.requireNonNull(con).prepareStatement(query);
+
+                PreparedStatement pst = Objects.requireNonNull(conns).prepareStatement(query);
                 pst.execute();
-                loadTable();
+                conns.close(); // close connection for now
+                loadTable(); // reload tables after deleting row
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -112,16 +125,17 @@ public class ListController implements Initializable {
     }
 
     private void loadTable(){
-        list_table.getItems().clear();
-
+        list_table.getItems().clear(); // clear table content before adding them again
         try {
-
-            ResultSet rs = Objects.requireNonNull(con).createStatement().executeQuery(" select * from Students");
-
+            if (conns.isClosed()) conns = Connect.getConnect(); // if connection is closed get it again
+            ResultSet rs = Objects.requireNonNull(conns).createStatement().executeQuery(" select * from Students"); // sql statement
             while (rs.next()){
+                // store each row in a student object
                 students.add(new Student(rs.getInt("ID"), rs.getString("name"),
                         rs.getString("gender"), rs.getString("mail"), rs.getInt("past")));
             }
+            rs.close(); // close query
+            conns.close(); // close connection for now
         } catch (SQLException e) {
             e.printStackTrace();
         }

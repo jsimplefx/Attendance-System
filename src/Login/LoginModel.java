@@ -6,34 +6,31 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Objects;
 
-public class LoginModel {
-    private Connection con;
+class LoginModel {
+    // get connection
+    private Connection con = Connect.getConnect();
 
-    LoginModel() {
-        con = Connect.getConnect();
-    }
-
-    boolean isConnected() {
-        try {
-            return !con.isClosed();
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return false;
-        }
-    }
-
+    // check login details
     boolean isCorrect(String User, String Pass) throws SQLException {
+
+        // if connection is closed get it again
+        if (con.isClosed()){
+            con = Connect.getConnect();
+        }
         PreparedStatement statement;
         ResultSet set;
         String query = "select * from Teachers where id = ? and pass = ?";
-
-            statement = con.prepareStatement(query);
+            statement = Objects.requireNonNull(con).prepareStatement(query);
             statement.setString(1, User);
             statement.setString(2, Pass);
             set = statement.executeQuery();
+            // close connection after checking login
+            con.close();
         return set.next();
     }
+
 }
 
 

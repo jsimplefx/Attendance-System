@@ -1,11 +1,9 @@
 package Login;
 
-import Sidebar.SidebarController;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.validation.NumberValidator;
 import com.jfoenix.validation.RequiredFieldValidator;
-import dbConnection.Connect;
 import javafx.beans.binding.Bindings;
 import javafx.beans.binding.BooleanBinding;
 import javafx.event.ActionEvent;
@@ -21,11 +19,11 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 public class LoginController implements Initializable {
 
+    // create an object of login class
     private LoginModel model = new LoginModel();
 
     @FXML private JFXTextField id;
@@ -37,9 +35,9 @@ public class LoginController implements Initializable {
     @FXML
     private Button logBtn;
 
-    private Connection con = Connect.getConnect();
-
+    // handle login button click event
     @FXML private void dataCheck(ActionEvent event) throws IOException, SQLException {
+        // validation
         if (model.isCorrect(id.getText(), pass.getText())){
             // switch to the home scene
             System.out.println("Welcome back fam!!"); // some background action.
@@ -47,7 +45,6 @@ public class LoginController implements Initializable {
             loader.setLocation(getClass().getResource("../Sidebar/Sidebar.fxml"));
             Parent homeParent = loader.load();
             Scene home = new Scene(homeParent);
-            SidebarController controller = loader.getController();
             //This line gets the Stage information
             Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
             window.setTitle("Attendance System");
@@ -61,16 +58,17 @@ public class LoginController implements Initializable {
                     id.validate();
                 }
             });
+            // set the wrong data label to visible
             wrongData.setVisible(true);
         }
-        con.close();
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        // disable login button if neither text fields is empty
+        // disable login button if either text fields is empty
         BooleanBinding booleanBind = Bindings.and(id.textProperty().isEmpty(), pass.textProperty().isEmpty());
         logBtn.disableProperty().bind(booleanBind);
+
         // validator to make sure id field is only numbers and not empty and password filed is not empty.
         NumberValidator numberValidator = new NumberValidator();
         RequiredFieldValidator fieldValidate = new RequiredFieldValidator();
