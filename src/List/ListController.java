@@ -4,6 +4,7 @@ import Classes.Student;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import dbConnection.Connect;
+import javafx.beans.binding.BooleanBinding;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -73,6 +74,13 @@ public class ListController implements Initializable {
         past_col.setCellValueFactory(new PropertyValueFactory<>("past"));
         mail_col.setCellValueFactory(new PropertyValueFactory<>("email"));
         list_table.setItems(students);
+
+        // disable add button unless all fields are filled
+        BooleanBinding isData = id_field.textProperty().isEmpty()
+                .and(name_field.textProperty().isEmpty())
+                .and(abs_field.textProperty().isEmpty())
+                .and(mail_field.textProperty().isEmpty());
+        addBtn.disableProperty().bind(isData);
 
     }
 
