@@ -40,7 +40,7 @@ public class ListController implements Initializable {
     private TableColumn<Student, String> name_col;
 
     @FXML
-    private TableColumn<Student, Boolean> past_col;
+    private TableColumn<Student, Integer> past_col;
 
     @FXML
     private TableColumn<Student, String> mail_col;
@@ -76,8 +76,9 @@ public class ListController implements Initializable {
         // define what each column is going to hold (based on student class)
         id_col.setCellValueFactory(new PropertyValueFactory<>("ID"));
         name_col.setCellValueFactory(new PropertyValueFactory<>("name"));
-        past_col.setCellValueFactory(new PropertyValueFactory<>("past"));
         mail_col.setCellValueFactory(new PropertyValueFactory<>("email"));
+        past_col.setCellValueFactory(new PropertyValueFactory<>("past"));
+
         list_table.setItems(students);
 
         // disable add button unless all fields are filled
@@ -91,6 +92,32 @@ public class ListController implements Initializable {
     @FXML
     void addRow(ActionEvent event) {
 
+        // if connection is closed get it again
+        try {
+            if (conns.isClosed()) conns = Connect.getConnect();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        String query = "insert into Students (ID, name, mail, past) values(?, ?, ?, ?)";
+
+        try {
+            PreparedStatement pst = Objects.requireNonNull(conns).prepareStatement(query);
+            pst.setString(1, id_field.getText());
+            pst.setString(2, name_field.getText());
+            pst.setString(3, mail_field.getText());
+            pst.setString(4, abs_field.getText());
+
+            pst.execute();
+            pst.close();
+            conns.close();
+            loadTable();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        id_field.clear();
+        name_field.clear();
+        abs_field.clear();
+        mail_field.clear();
     }
 
     @FXML
