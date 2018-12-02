@@ -102,6 +102,7 @@ public class ListController implements Initializable {
 
         try {
             PreparedStatement pst = Objects.requireNonNull(conns).prepareStatement(query);
+            // set the question marks in statement to these values
             pst.setString(1, id_field.getText());
             pst.setString(2, name_field.getText());
             pst.setString(3, mail_field.getText());
@@ -110,14 +111,20 @@ public class ListController implements Initializable {
             pst.execute();
             pst.close();
             conns.close();
-            loadTable();
+            loadTable(); // reload table after adding new user
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        // clear the text fields after finishing
         id_field.clear();
         name_field.clear();
         abs_field.clear();
         mail_field.clear();
+        // alert the user after successfully adding student
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Add new student");
+        alert.setHeaderText("Student added successfully!");
+        alert.show();
     }
 
     @FXML
