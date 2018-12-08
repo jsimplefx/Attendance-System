@@ -7,7 +7,6 @@ import dbConnection.Connect;
 import javafx.beans.binding.BooleanBinding;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -15,6 +14,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.cell.TextFieldTableCell;
 
 import java.net.URL;
 import java.sql.Connection;
@@ -26,9 +26,6 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class ListController implements Initializable {
-    /* TODO handle table editing
-       TODO handle add button click
-     *  */
 
     @FXML
     private TableView<Student> list_table;
@@ -40,7 +37,7 @@ public class ListController implements Initializable {
     private TableColumn<Student, String> name_col;
 
     @FXML
-    private TableColumn<Student, Integer> past_col;
+    private TableColumn<Student, String> past_col;
 
     @FXML
     private TableColumn<Student, String> mail_col;
@@ -60,8 +57,6 @@ public class ListController implements Initializable {
     @FXML
     private JFXButton addBtn;
 
-    @FXML
-    private JFXButton delBtn;
 
     // an observable list of students
     private ObservableList<Student> students = FXCollections.observableArrayList();
@@ -77,7 +72,7 @@ public class ListController implements Initializable {
         id_col.setCellValueFactory(new PropertyValueFactory<>("ID"));
         name_col.setCellValueFactory(new PropertyValueFactory<>("name"));
         mail_col.setCellValueFactory(new PropertyValueFactory<>("email"));
-        past_col.setCellValueFactory(new PropertyValueFactory<>("past"));
+        past_col.setCellValueFactory(new PropertyValueFactory<>("absences"));
 
         list_table.setItems(students);
 
@@ -87,18 +82,21 @@ public class ListController implements Initializable {
                 .and(abs_field.textProperty().isEmpty())
                 .and(mail_field.textProperty().isEmpty());
         addBtn.disableProperty().bind(isData);
+        list_table.setEditable(true);
+        name_col.setCellFactory(TextFieldTableCell.forTableColumn());
+        mail_col.setCellFactory(TextFieldTableCell.forTableColumn());
+        past_col.setCellFactory(TextFieldTableCell.forTableColumn());
+//        past_col.setCellFactory(TextFieldTableCell.forTableColumn());
+
+
+
     }
 
     @FXML
-    void addRow(ActionEvent event) {
+    void addRow() {
 
-        // if connection is closed get it again
-        try {
-            if (conns.isClosed()) conns = Connect.getConnect();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        String query = "insert into Students (ID, name, mail, past) values(?, ?, ?, ?)";
+        checkConn();
+        String query = "insert into Students (ID, name, email, absences) values(?, ?, ?, ?)";
 
         try {
             PreparedStatement pst = Objects.requireNonNull(conns).prepareStatement(query);
@@ -110,8 +108,9 @@ public class ListController implements Initializable {
 
             pst.execute();
             pst.close();
+
             conns.close();
-            loadTable(); // reload table after adding new user
+            loadTable(); // reload table after adding new student
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -128,14 +127,9 @@ public class ListController implements Initializable {
     }
 
     @FXML
-    void deleteRow(ActionEvent event){
+    void deleteRow(){
 
-        // if connection is closed get it again
-        try {
-            if (conns.isClosed()) conns = Connect.getConnect();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        checkConn();
         Student stud = list_table.getSelectionModel().getSelectedItem(); // get selected item
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Delete Record");
@@ -161,17 +155,42 @@ public class ListController implements Initializable {
     private void loadTable(){
         list_table.getItems().clear(); // clear table content before adding them again
         try {
-            if (conns.isClosed()) conns = Connect.getConnect(); // if connection is closed get it again
+            checkConn();
             ResultSet rs = Objects.requireNonNull(conns).createStatement().executeQuery(" select * from Students"); // sql statement
             while (rs.next()){
                 // store each row in a student object
                 students.add(new Student(rs.getInt("ID"), rs.getString("name"),
-                        rs.getString("gender"), rs.getString("mail"), rs.getInt("past")));
+                        rs.getString("gender"), rs.getString("email"), rs.getString("absences")));
             }
             rs.close(); // close query
             conns.close(); // close connection for now
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+    private void checkConn(){
+        // if connection is closed get it again
+        try {
+            if (conns.isClosed()) conns = Connect.getConnect();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void updateCol(TableColumn.CellEditEvent edditedcell){
+        Student selected =  list_table.getSelectionModel().getSelectedItem();
+        String query = "update Students set " +  edditedcell.getTableColumn().getText().toLowerCase() + " = ? where id = ?";
+        try {
+            checkConn();
+            PreparedStatement pst = Objects.requireNonNull(conns).prepareStatement(query);
+            pst.setString(1, edditedcell.getNewValue().toString());
+            pst.setString(2, String.valueOf(selected.getID()));
+            pst.execute();
+            conns.close(); // close connection for now
+            loadTable(); // reload tables after updating field
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
     }
 }

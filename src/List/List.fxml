@@ -12,9 +12,9 @@
     <TableView fx:id="list_table" layoutX="14.0" layoutY="6.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="490.0" prefWidth="800.0" stylesheets="@../StyleCheet/style.css">
       <columns>
           <TableColumn fx:id="id_col" prefWidth="108.0" text="ID" />
-          <TableColumn fx:id="name_col" prefWidth="303.0" text="Name" />
-          <TableColumn fx:id="past_col" minWidth="0.0" prefWidth="91.0" text="Absenses" />
-          <TableColumn fx:id="mail_col" prefWidth="291.0" text="Email" />
+          <TableColumn fx:id="name_col" onEditCommit="#updateCol" prefWidth="303.0" text="Name" />
+          <TableColumn fx:id="past_col" minWidth="0.0" onEditCommit="#updateCol" prefWidth="91.0" text="Absences" />
+          <TableColumn fx:id="mail_col" onEditCommit="#updateCol" prefWidth="291.0" text="Email" />
       </columns>
     </TableView>
     <JFXTextField fx:id="id_field" layoutX="14.0" layoutY="510.0" prefHeight="26.0" prefWidth="84.0" promptText="ID" />

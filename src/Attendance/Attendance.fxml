@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="Attendance.AttendanceController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="550.0" prefWidth="820.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Attendance.AttendanceController">
+    <TableView fx:id="list_table" layoutX="14.0" layoutY="6.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="536.0" prefWidth="800.0" stylesheets="@../StyleCheet/style.css">
+        <columns>
+            <TableColumn fx:id="id_col" prefWidth="108.0" text="ID" />
+            <TableColumn fx:id="name_col" prefWidth="254.0" text="Name" />
+         <TableColumn fx:id="present_col" onEditCommit="#takeAtten" prefWidth="92.0" text="Present" />
+         <TableColumn fx:id="excuse_col" onEditCommit="#takeAtten" prefWidth="335.0" text="Excuse" />
+        </columns>
+    </TableView>
 </AnchorPane>
