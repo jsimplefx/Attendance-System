@@ -35,6 +35,7 @@ public class LoginController implements Initializable {
     @FXML
     private Button logBtn;
 
+
     // handle login button click event
     @FXML private void dataCheck(ActionEvent event) throws IOException, SQLException {
         // validation

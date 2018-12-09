@@ -114,7 +114,7 @@
                      <Insets left="20.0" top="5.0" />
                   </HBox.margin>
                </OctIconView>
-               <JFXButton fx:id="SettingsBtn" alignment="TOP_LEFT" contentDisplay="CENTER" onMouseClicked="#SettingsBtnPressed" prefHeight="26.0" prefWidth="144.0" text="Settings" textFill="#e8eaf6" HBox.hgrow="ALWAYS">
+               <JFXButton fx:id="SettingsBtn" alignment="TOP_LEFT" contentDisplay="CENTER" onMouseClicked="#SettingsBtnPressed" prefHeight="26.0" prefWidth="144.0" text="About Application" textFill="#e8eaf6" HBox.hgrow="ALWAYS">
                   <HBox.margin>
                      <Insets />
                   </HBox.margin>

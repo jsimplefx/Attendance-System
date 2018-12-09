@@ -23,27 +23,4 @@ public class Student extends Person{
         this.excuse = excuse;
     }
 
-    public String getAbsences() {
-        return absences;
-    }
-
-    public void setAbsences(String absences) {
-        this.absences = absences;
-    }
-
-    public String getExcuse() {
-        return excuse;
-    }
-
-    public void setExcuse(String excuse) {
-        this.excuse = excuse;
-    }
-
-    public String getPresent() {
-        return present;
-    }
-
-    public void setPresent(String present) {
-        this.present = present;
-    }
 }

@@ -1,5 +1,7 @@
 package Sidebar;
 
+import Classes.Teacher;
+import Login.LoginModel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,7 +12,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
@@ -22,32 +23,37 @@ import java.util.ResourceBundle;
 public class SidebarController implements Initializable {
      /* clicking a section button will just change the center of the pane
       not actually the whole window
-       (this allows us to make the sidebar permanent and doesn't move
+       (this allows us to make the sidebar permanent and doesn't move)
        */
     @FXML private BorderPane homePane;
 
     @FXML private Label UserName;
 
     // handle buttons press events.
-    @FXML private void DashboardBtnPressed(MouseEvent event) throws IOException {
+    @FXML private void DashboardBtnPressed() throws IOException {
         loadPane("../Dashboard/Dashboard");
     }
 
-    @FXML private void AttenBtnPressed(MouseEvent  event) throws IOException {
+    @FXML private void AttenBtnPressed() throws IOException {
         loadPane("../Attendance/Attendance");
     }
 
-    @FXML private void ListBtnPressed(MouseEvent  event) throws IOException {
+    @FXML private void ListBtnPressed() throws IOException {
         loadPane("../List/List");
     }
 
     @FXML
-    public void AboutBtnPressed(MouseEvent mouseEvent) throws IOException {
-        loadPane("../About/About");
+    public void AboutBtnPressed() throws IOException {
+        loadPane("../AboutLecturer/AboutLecturer");
     }
 
-    @FXML private void SettingsBtnPressed(MouseEvent  event) throws IOException {
-        loadPane("../Settings/Settings");
+    @FXML private void SettingsBtnPressed() throws IOException {
+        loadPane("../AboutApp/AboutApp");
+    }
+
+    private void loadPane(String UI) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource(UI+".fxml"));
+        homePane.setCenter(root);
     }
 
     @FXML void logoutNow(ActionEvent event) throws IOException {
@@ -72,20 +78,24 @@ public class SidebarController implements Initializable {
 
     }
 
-    private void loadPane(String UI) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource(UI+".fxml"));
-        homePane.setCenter(root);
-    }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        Teacher teacher = LoginModel.getLogged(); // get logged in teacher from login model class
+
         // set the dashboard as default view when user logs in
         try {
             loadPane("../Dashboard/Dashboard");
         } catch (IOException e) {
             e.printStackTrace();
         }
-        UserName.setStyle("-fx-font-weight: bold");
-        UserName.setText("Welcome");
+        UserName.setStyle("-fx-font-weight: medium"); // some styling
+        String name = teacher.getName().split(" ")[0]; // get only the first word of the name
+        // set prefix based on gender.
+        if (teacher.getGender().equals("Male")) {
+            UserName.setText("MR. " +name.toUpperCase());
+        } else {
+            UserName.setText("MS. " +name.toUpperCase());
+        }
     }
 
 }

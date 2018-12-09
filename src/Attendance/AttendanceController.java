@@ -69,7 +69,8 @@ public class AttendanceController implements Initializable {
             ResultSet rs = Objects.requireNonNull(conns).createStatement().executeQuery(" select * from Students"); // sql statement
             while (rs.next()){
                 // store each row in a student object
-                students.add(new Student(rs.getInt("ID"), rs.getString("name"), rs.getString("excuse"), rs.getString("present")));
+                students.add(new Student(rs.getInt("ID"), rs.getString("name"),
+                            rs.getString("excuse"), rs.getString("present")));
             }
             rs.close(); // close query
             conns.close(); // close connection for now
@@ -85,6 +86,8 @@ public class AttendanceController implements Initializable {
         try {
             checkConn();
             PreparedStatement pst = Objects.requireNonNull(conns).prepareStatement(query);
+            // get the edited column name
+            // (this method is genius, it can edit any column as long the name in the database is same as table but all small)
             pst.setString(1, edditedcell.getNewValue().toString());
             pst.setString(2, String.valueOf(selected.getID()));
             pst.execute();

@@ -1,5 +1,6 @@
 package Login;
 
+import Classes.Teacher;
 import dbConnection.Connect;
 
 import java.sql.Connection;
@@ -8,10 +9,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Objects;
 
-class LoginModel {
+public class LoginModel {
     // get connection
     private Connection con = Connect.getConnect();
 
+    private static Teacher logged = new Teacher(); // new teacher to store the logged one in
     // check login details
     boolean isCorrect(String User, String Pass) throws SQLException {
 
@@ -26,11 +28,21 @@ class LoginModel {
             statement.setString(1, User);
             statement.setString(2, Pass);
             set = statement.executeQuery();
-            // close connection after checking login
+            setLogged(set);
+                // close connection after checking login
             con.close();
         return set.next();
     }
 
+     public static Teacher getLogged() {
+        return logged;
+    }
+     private static void setLogged(ResultSet set) throws SQLException {
+        // store the logged in user details in an object for later use
+        logged = new Teacher(set.getString("name"), set.getString("pass"),
+                set.getInt("id"), set.getString("gender"), set.getString("email"),
+                set.getString("subjects"), set.getString("exp"), set.getLong("phone"));
+    }
 }
 
 

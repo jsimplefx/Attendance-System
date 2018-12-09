@@ -5,7 +5,7 @@ public class Person {
     int ID;
     String gender;
     String email;
-    private long phone;
+    long phone;
 
      Person() {
     }
