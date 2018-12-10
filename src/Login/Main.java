@@ -1,13 +1,5 @@
 package Login;
 
-/*
-TODO an image view for the main dashboard (don't want to show everything asap).
-TODO design the rest of the scenes.
-TODO add students data.
-TODO tell the other group niggas am working on this.
-TODO code cleanup and optimization.
-*/
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -44,6 +36,7 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
+        // the most empty function in the whole project
         launch(args);
     }
 }

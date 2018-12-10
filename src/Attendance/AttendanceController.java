@@ -55,24 +55,24 @@ public class AttendanceController implements Initializable {
         present_col.setCellValueFactory(new PropertyValueFactory<>("present"));
         excuse_col.setCellValueFactory(new PropertyValueFactory<>("excuse"));
 
-        list_table.setItems(students);
+        list_table.setItems(students); // set table items as the Students observable list
 
-        list_table.setEditable(true);
-        excuse_col.setCellFactory(TextFieldTableCell.forTableColumn());
-        present_col.setCellFactory(TextFieldTableCell.forTableColumn());
+        list_table.setEditable(true); // enable table editing
+        excuse_col.setCellFactory(TextFieldTableCell.forTableColumn()); // enable column editing
+        present_col.setCellFactory(TextFieldTableCell.forTableColumn()); // enable column editing
     }
 
     private void loadTable(){
         list_table.getItems().clear(); // clear table content before adding them again
         try {
-            checkConn();
+            checkConn(); // check connection
             ResultSet rs = Objects.requireNonNull(conns).createStatement().executeQuery(" select * from Students"); // sql statement
             while (rs.next()){
                 // store each row in a student object
                 students.add(new Student(rs.getInt("ID"), rs.getString("name"),
                             rs.getString("excuse"), rs.getString("present")));
             }
-            rs.close(); // close query
+            rs.close(); // close statement
             conns.close(); // close connection for now
         } catch (SQLException e) {
             e.printStackTrace();
@@ -81,16 +81,14 @@ public class AttendanceController implements Initializable {
 
     // this method can edit any selected row (if you have enabled editing for it)
     public void takeAtten(TableColumn.CellEditEvent edditedcell){
-        Student selected =  list_table.getSelectionModel().getSelectedItem();
-        String query = "update Students set " +  edditedcell.getTableColumn().getText().toLowerCase() + " = ? where id = ?";
+        Student selected =  list_table.getSelectionModel().getSelectedItem(); // get the student being edited right now
+        String query = "update Students set " +  edditedcell.getTableColumn().getText().toLowerCase() + " = ? where id = ?"; // sql query
         try {
-            checkConn();
+            checkConn(); // check connection
             PreparedStatement pst = Objects.requireNonNull(conns).prepareStatement(query);
-            // get the edited column name
-            // (this method is genius, it can edit any column as long the name in the database is same as table but all small)
-            pst.setString(1, edditedcell.getNewValue().toString());
-            pst.setString(2, String.valueOf(selected.getID()));
-            pst.execute();
+            pst.setString(1, edditedcell.getNewValue().toString()); // pass the inputted value to be updated in that row
+            pst.setString(2, String.valueOf(selected.getID())); // pass the id of the column that has to be edited
+            pst.execute(); // execute query
             conns.close(); // close connection for now
             loadTable(); // reload tables after updating field
         } catch (SQLException e) {

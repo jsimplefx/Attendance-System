@@ -1,15 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AboutApp.AboutAppController">
+<AnchorPane prefHeight="550.0" prefWidth="820.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AboutApp.AboutAppController">
    <children>
-      <Label layoutX="282.0" layoutY="147.0" text="AboutApp">
+      <Label alignment="CENTER" layoutX="146.0" layoutY="14.0" prefHeight="27.0" prefWidth="528.0" text="Students Attendance System">
          <font>
-            <Font size="60.0" />
+            <Font name="SF Compact Display Regular" size="18.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="240.0" fitWidth="264.0" layoutX="290.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/window.png" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" layoutX="146.0" layoutY="342.0" prefHeight="27.0" prefWidth="528.0" text="By" underline="true">
+         <font>
+            <Font name="SF Compact Display Regular" size="18.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_LEFT" layoutX="128.0" layoutY="392.0" prefHeight="27.0" prefWidth="565.0" text="ABUBAKAR YAGOUB IBRAHIM OMER                                                            1625897">
+         <font>
+            <Font name="SF Compact Display Regular" size="18.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_LEFT" layoutX="128.0" layoutY="426.0" prefHeight="27.0" prefWidth="565.0" text="IRIEN AKTER                                                                                                             1632528">
+         <font>
+            <Font name="SF Compact Display Regular" size="18.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_LEFT" layoutX="128.0" layoutY="462.0" prefHeight="27.0" prefWidth="565.0" text="SYED MUHAMMAD AIMAN                                                                                 1727935">
+         <font>
+            <Font name="SF Compact Display Regular" size="18.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_LEFT" layoutX="128.0" layoutY="492.0" prefHeight="27.0" prefWidth="565.0" text="MUHAMMAD SYAMIM MOHD SUKARDI                                                        1722396">
+         <font>
+            <Font name="SF Compact Display Regular" size="18.0" />
          </font>
       </Label>
    </children>

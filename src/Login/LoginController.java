@@ -52,6 +52,7 @@ public class LoginController implements Initializable {
             window.setScene(home);
             window.show();
         } else {
+            // this else statement doesn't work anymore because of the setLogged function in LoginModel class
             System.out.println("Nah Not today ma dude");
             // display the wrong information text in red if data doesn't match available one.
             id.focusedProperty().addListener((observableValue, oldValue, newValue) -> {
@@ -66,11 +67,11 @@ public class LoginController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        // disable login button if either text fields is empty
+        // disable login button if either text fields is empty (boolean binding)
         BooleanBinding booleanBind = Bindings.and(id.textProperty().isEmpty(), pass.textProperty().isEmpty());
         logBtn.disableProperty().bind(booleanBind);
 
-        // validator to make sure id field is only numbers and not empty and password filed is not empty.
+        // validators to make sure id field is only numbers and not empty and password filed is not empty.
         NumberValidator numberValidator = new NumberValidator();
         RequiredFieldValidator fieldValidate = new RequiredFieldValidator();
         RequiredFieldValidator passValidate = new RequiredFieldValidator();

@@ -15,8 +15,6 @@ public class Student extends Person{
         this.bar_status = bar_status;
     }
 
-
-
     // a constructor with last excuse
     public Student( int ID, String name, String excuse, String present) {
         this.name = name;

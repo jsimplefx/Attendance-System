@@ -80,28 +80,24 @@ public class ListController implements Initializable {
         past_col.setCellValueFactory(new PropertyValueFactory<>("absences"));
         bar_col.setCellValueFactory(new PropertyValueFactory<>("bar_status"));
 
-        list_table.setItems(students);
+        list_table.setItems(students); // add students observable list to table
 
-        // disable add button unless all fields are filled
+        // disable add button unless all fields are filled (binding)
         BooleanBinding isData = id_field.textProperty().isEmpty()
                 .and(name_field.textProperty().isEmpty())
                 .and(abs_field.textProperty().isEmpty())
                 .and(mail_field.textProperty().isEmpty());
         addBtn.disableProperty().bind(isData);
-        list_table.setEditable(true);
-        name_col.setCellFactory(TextFieldTableCell.forTableColumn());
-        mail_col.setCellFactory(TextFieldTableCell.forTableColumn());
-        past_col.setCellFactory(TextFieldTableCell.forTableColumn());
-        bar_col.setCellFactory(TextFieldTableCell.forTableColumn());
-//        past_col.setCellFactory(TextFieldTableCell.forTableColumn());
 
-
-
+        list_table.setEditable(true); // enable editing
+        name_col.setCellFactory(TextFieldTableCell.forTableColumn()); // enable column editing
+        mail_col.setCellFactory(TextFieldTableCell.forTableColumn()); // enable column editing
+        past_col.setCellFactory(TextFieldTableCell.forTableColumn()); // enable column editing
+        bar_col.setCellFactory(TextFieldTableCell.forTableColumn()); // enable column editing
     }
 
     @FXML
-    void addRow() {
-
+    void addRow() { // add new student
         checkConn();
         String query = "insert into Students (ID, name, email, absences, bar) values(?, ?, ?, ?, ?)";
 
@@ -113,12 +109,9 @@ public class ListController implements Initializable {
             pst.setString(3, mail_field.getText());
             pst.setString(4, abs_field.getText());
             pst.setString(5, bar_field.getText());
-
-
             pst.execute();
-            pst.close();
-
-            conns.close();
+            pst.close(); // close statement
+            conns.close(); // close connection
             loadTable(); // reload table after adding new student
         } catch (SQLException e) {
             e.printStackTrace();
@@ -137,8 +130,7 @@ public class ListController implements Initializable {
     }
 
     @FXML
-    void deleteRow(){
-
+    void deleteRow(){ // delete a student
         checkConn();
         Student stud = list_table.getSelectionModel().getSelectedItem(); // get selected item
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
@@ -188,14 +180,14 @@ public class ListController implements Initializable {
     }
 
     public void updateCol(TableColumn.CellEditEvent edditedcell){
-        Student selected =  list_table.getSelectionModel().getSelectedItem();
+        Student selected =  list_table.getSelectionModel().getSelectedItem(); // get the student being edited right now
         String query = "update Students set " +  edditedcell.getTableColumn().getText().toLowerCase().split(" ")[0] + " = ? where id = ?";
         try {
-            checkConn();
-            PreparedStatement pst = Objects.requireNonNull(conns).prepareStatement(query);
-            pst.setString(1, edditedcell.getNewValue().toString());
-            pst.setString(2, String.valueOf(selected.getID()));
-            pst.execute();
+            checkConn(); // check connection
+            PreparedStatement pst = Objects.requireNonNull(conns).prepareStatement(query); // sql statement
+            pst.setString(1, edditedcell.getNewValue().toString()); // pass the inputted value to be updated in that row
+            pst.setString(2, String.valueOf(selected.getID())); // pass the id of the column that has to be edited
+            pst.execute(); // execute statement
             conns.close(); // close connection for now
             loadTable(); // reload tables after updating field
         } catch (SQLException e) {

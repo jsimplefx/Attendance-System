@@ -35,7 +35,6 @@ public class DashboardController implements Initializable {
     @FXML
     private Label barred_num;
 
-
     private Connection conn = Connect.getConnect(); // get connection to database
     @Override
 

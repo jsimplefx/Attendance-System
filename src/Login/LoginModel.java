@@ -14,6 +14,7 @@ public class LoginModel {
     private Connection con = Connect.getConnect();
 
     private static Teacher logged = new Teacher(); // new teacher to store the logged one in
+
     // check login details
     boolean isCorrect(String User, String Pass) throws SQLException {
 

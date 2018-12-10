@@ -34,23 +34,27 @@ public class SidebarController implements Initializable {
         loadPane("../Dashboard/Dashboard");
     }
 
+    // handle buttons press events.
     @FXML private void AttenBtnPressed() throws IOException {
         loadPane("../Attendance/Attendance");
     }
 
+    // handle buttons press events.
     @FXML private void ListBtnPressed() throws IOException {
         loadPane("../List/List");
     }
 
-    @FXML
-    public void AboutBtnPressed() throws IOException {
+    // handle buttons press events.
+    @FXML public void AboutBtnPressed() throws IOException {
         loadPane("../AboutLecturer/AboutLecturer");
     }
 
+    // handle buttons press events.
     @FXML private void SettingsBtnPressed() throws IOException {
         loadPane("../AboutApp/AboutApp");
     }
 
+    // function to set the borderPane center to the passed fxml file
     private void loadPane(String UI) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource(UI+".fxml"));
         homePane.setCenter(root);
@@ -70,10 +74,10 @@ public class SidebarController implements Initializable {
             Parent Logout = FXMLLoader.load(getClass().getResource("../Login/Login.fxml"));
             Scene Login = new Scene(Logout);
             //This line gets the Stage information
-            Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-            window.setTitle("Login");
-            window.setScene(Login);
-            window.show();
+            Stage window = (Stage)((Node)event.getSource()).getScene().getWindow(); // use the same stage again
+            window.setTitle("Login"); // set title
+            window.setScene(Login); // load login scene
+            window.show(); // show window
         }
 
     }
