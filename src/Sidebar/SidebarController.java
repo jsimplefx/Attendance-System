@@ -88,7 +88,6 @@ public class SidebarController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        UserName.setStyle("-fx-font-weight: medium"); // some styling
         String name = teacher.getName().split(" ")[0]; // get only the first word of the name
         // set prefix based on gender.
         if (teacher.getGender().equals("Male")) {

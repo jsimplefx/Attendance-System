@@ -12,15 +12,16 @@
     <TableView fx:id="list_table" layoutX="14.0" layoutY="6.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="490.0" prefWidth="800.0" stylesheets="@../StyleCheet/style.css">
       <columns>
           <TableColumn fx:id="id_col" prefWidth="108.0" text="ID" />
-          <TableColumn fx:id="name_col" onEditCommit="#updateCol" prefWidth="303.0" text="Name" />
-          <TableColumn fx:id="past_col" minWidth="0.0" onEditCommit="#updateCol" prefWidth="91.0" text="Absences" />
-          <TableColumn fx:id="mail_col" onEditCommit="#updateCol" prefWidth="291.0" text="Email" />
+          <TableColumn fx:id="name_col" onEditCommit="#updateCol" prefWidth="238.0" text="Name" />
+          <TableColumn fx:id="past_col" minWidth="0.0" onEditCommit="#updateCol" prefWidth="99.0" text="Absences" />
+          <TableColumn fx:id="bar_col" minWidth="0.0" onEditCommit="#updateCol" prefWidth="102.0" text="Bar Status" />
+         <TableColumn fx:id="mail_col" minWidth="0.0" onEditCommit="#updateCol" prefWidth="245.0" text="Email" />
       </columns>
     </TableView>
     <JFXTextField fx:id="id_field" layoutX="14.0" layoutY="510.0" prefHeight="26.0" prefWidth="84.0" promptText="ID" />
-    <JFXTextField fx:id="name_field" labelFloat="true" layoutX="109.0" layoutY="510.0" prefHeight="26.0" prefWidth="231.0" promptText="Name" />
-    <JFXTextField fx:id="abs_field" labelFloat="true" layoutX="352.0" layoutY="510.0" prefHeight="26.0" prefWidth="84.0" promptText="Absenses" />
-    <JFXTextField fx:id="mail_field" labelFloat="true" layoutX="451.0" layoutY="510.0" prefHeight="26.0" prefWidth="220.0" promptText="Email" />
+    <JFXTextField fx:id="name_field" labelFloat="true" layoutX="109.0" layoutY="510.0" prefHeight="26.0" prefWidth="190.0" promptText="Name" />
+    <JFXTextField fx:id="abs_field" labelFloat="true" layoutX="313.0" layoutY="510.0" prefHeight="26.0" prefWidth="84.0" promptText="Absenses" />
+    <JFXTextField fx:id="mail_field" labelFloat="true" layoutX="505.0" layoutY="510.0" prefHeight="26.0" prefWidth="179.0" promptText="Email" />
     <JFXButton fx:id="addBtn" layoutX="695.0" layoutY="510.0" onAction="#addRow" ripplerFill="TRANSPARENT" style="-fx-background-color: #2980b9;" text="Add" textFill="WHITE">
         <font>
           <Font name="SF Compact Display Regular" size="13.0" />
@@ -37,4 +38,5 @@
          <Cursor fx:constant="HAND" />
       </cursor>
     </JFXButton>
+   <JFXTextField fx:id="bar_field" labelFloat="true" layoutX="410.0" layoutY="510.0" prefHeight="26.0" prefWidth="84.0" promptText="Bar Status" />
 </AnchorPane>

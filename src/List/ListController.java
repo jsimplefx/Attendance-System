@@ -55,8 +55,13 @@ public class ListController implements Initializable {
     private JFXTextField mail_field;
 
     @FXML
+    private JFXTextField bar_field;
+
+    @FXML
     private JFXButton addBtn;
 
+    @FXML
+    private TableColumn<Student, String> bar_col;
 
     // an observable list of students
     private ObservableList<Student> students = FXCollections.observableArrayList();
@@ -73,6 +78,7 @@ public class ListController implements Initializable {
         name_col.setCellValueFactory(new PropertyValueFactory<>("name"));
         mail_col.setCellValueFactory(new PropertyValueFactory<>("email"));
         past_col.setCellValueFactory(new PropertyValueFactory<>("absences"));
+        bar_col.setCellValueFactory(new PropertyValueFactory<>("bar_status"));
 
         list_table.setItems(students);
 
@@ -86,6 +92,7 @@ public class ListController implements Initializable {
         name_col.setCellFactory(TextFieldTableCell.forTableColumn());
         mail_col.setCellFactory(TextFieldTableCell.forTableColumn());
         past_col.setCellFactory(TextFieldTableCell.forTableColumn());
+        bar_col.setCellFactory(TextFieldTableCell.forTableColumn());
 //        past_col.setCellFactory(TextFieldTableCell.forTableColumn());
 
 
@@ -96,7 +103,7 @@ public class ListController implements Initializable {
     void addRow() {
 
         checkConn();
-        String query = "insert into Students (ID, name, email, absences) values(?, ?, ?, ?)";
+        String query = "insert into Students (ID, name, email, absences, bar) values(?, ?, ?, ?, ?)";
 
         try {
             PreparedStatement pst = Objects.requireNonNull(conns).prepareStatement(query);
@@ -105,6 +112,8 @@ public class ListController implements Initializable {
             pst.setString(2, name_field.getText());
             pst.setString(3, mail_field.getText());
             pst.setString(4, abs_field.getText());
+            pst.setString(5, bar_field.getText());
+
 
             pst.execute();
             pst.close();
@@ -119,6 +128,7 @@ public class ListController implements Initializable {
         name_field.clear();
         abs_field.clear();
         mail_field.clear();
+        bar_field.clear();
         // alert the user after successfully adding student
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Add new student");
@@ -160,7 +170,7 @@ public class ListController implements Initializable {
             while (rs.next()){
                 // store each row in a student object
                 students.add(new Student(rs.getInt("ID"), rs.getString("name"),
-                        rs.getString("gender"), rs.getString("email"), rs.getString("absences")));
+                        rs.getString("gender"), rs.getString("email"), rs.getString("absences"), rs.getString("bar")));
             }
             rs.close(); // close query
             conns.close(); // close connection for now
@@ -179,7 +189,7 @@ public class ListController implements Initializable {
 
     public void updateCol(TableColumn.CellEditEvent edditedcell){
         Student selected =  list_table.getSelectionModel().getSelectedItem();
-        String query = "update Students set " +  edditedcell.getTableColumn().getText().toLowerCase() + " = ? where id = ?";
+        String query = "update Students set " +  edditedcell.getTableColumn().getText().toLowerCase().split(" ")[0] + " = ? where id = ?";
         try {
             checkConn();
             PreparedStatement pst = Objects.requireNonNull(conns).prepareStatement(query);

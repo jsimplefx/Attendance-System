@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="550.0" prefWidth="820.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Attendance.AttendanceController">
-    <TableView fx:id="list_table" layoutX="14.0" layoutY="6.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="536.0" prefWidth="800.0" stylesheets="@../StyleCheet/style.css">
+    <TableView fx:id="list_table" layoutX="14.0" layoutY="6.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="509.0" prefWidth="800.0" stylesheets="@../StyleCheet/style.css">
         <columns>
             <TableColumn fx:id="id_col" prefWidth="108.0" text="ID" />
             <TableColumn fx:id="name_col" prefWidth="254.0" text="Name" />
@@ -13,4 +15,9 @@
          <TableColumn fx:id="excuse_col" onEditCommit="#takeAtten" prefWidth="335.0" text="Excuse" />
         </columns>
     </TableView>
+   <Label layoutX="14.0" layoutY="524.0" prefHeight="16.0" prefWidth="296.0" text="Tip: just type 1 for present and 0 for absent">
+      <font>
+         <Font size="8.0" />
+      </font>
+   </Label>
 </AnchorPane>
