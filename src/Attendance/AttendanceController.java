@@ -1,6 +1,8 @@
 package Attendance;
 
 import Classes.Student;
+import Classes.Teacher;
+import Login.LoginModel;
 import dbConnection.Connect;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -36,8 +38,8 @@ public class AttendanceController implements Initializable {
     @FXML
     private TableColumn<Student, String> excuse_col;
 
-
-
+    // get logged in teacher
+    private Teacher logged = LoginModel.getLogged();
 
     // an observable list of students
     private ObservableList<Student> students = FXCollections.observableArrayList();
@@ -66,7 +68,7 @@ public class AttendanceController implements Initializable {
         list_table.getItems().clear(); // clear table content before adding them again
         try {
             checkConn(); // check connection
-            ResultSet rs = Objects.requireNonNull(conns).createStatement().executeQuery(" select * from Students"); // sql statement
+            ResultSet rs = Objects.requireNonNull(conns).createStatement().executeQuery(" select * from '" + logged.getID() + "'"); // sql statement
             while (rs.next()){
                 // store each row in a student object
                 students.add(new Student(rs.getInt("ID"), rs.getString("name"),
@@ -82,7 +84,8 @@ public class AttendanceController implements Initializable {
     // this method can edit any selected row (if you have enabled editing for it)
     public void takeAtten(TableColumn.CellEditEvent edditedcell){
         Student selected =  list_table.getSelectionModel().getSelectedItem(); // get the student being edited right now
-        String query = "update Students set " +  edditedcell.getTableColumn().getText().toLowerCase() + " = ? where id = ?"; // sql query
+
+        String query = "update '" + logged.getID() + "' set " +  edditedcell.getTableColumn().getText().toLowerCase() + " = ? where id = ?"; // sql query
         try {
             checkConn(); // check connection
             PreparedStatement pst = Objects.requireNonNull(conns).prepareStatement(query);

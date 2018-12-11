@@ -35,6 +35,8 @@ public class DashboardController implements Initializable {
     @FXML
     private Label barred_num;
 
+    // get logged in teacher
+    private Teacher logged = LoginModel.getLogged();
     private Connection conn = Connect.getConnect(); // get connection to database
     @Override
 
@@ -58,7 +60,7 @@ public class DashboardController implements Initializable {
     private int getStudentsNum() {
         checkConn(); // check if connection is available or not
         try {
-            ResultSet rs = Objects.requireNonNull(conn).createStatement().executeQuery(" select count(*) from Students"); // sql statement
+            ResultSet rs = Objects.requireNonNull(conn).createStatement().executeQuery(" select count(*) from '" + logged.getID() + "'"); // sql statement
                 return rs.getInt(1); // get the statement output
         } catch (SQLException e) {
             e.printStackTrace();
@@ -76,7 +78,8 @@ public class DashboardController implements Initializable {
     private int getBarredStudentsNum() {
         checkConn(); // check connection
         try {
-            ResultSet rs = Objects.requireNonNull(conn).createStatement().executeQuery(" select count(*) from Students where bar = 'barred' "); // sql statement
+            ResultSet rs = Objects.requireNonNull(conn).createStatement()
+                            .executeQuery(" select count(*) from '" + logged.getID() + "' where bar = 'barred' "); // sql statement
             return rs.getInt(1); // get the statement output
         } catch (SQLException e) {
             e.printStackTrace();
@@ -94,7 +97,8 @@ public class DashboardController implements Initializable {
     private int getAbsentStudentsNum(){
         checkConn(); // check connection
         try {
-            ResultSet rs = Objects.requireNonNull(conn).createStatement().executeQuery(" select count(*) from Students where present = 0"); // sql statement
+            ResultSet rs = Objects.requireNonNull(conn).createStatement().
+                    executeQuery(" select count(*) from '" + logged.getID() + "' where present = 0"); // sql statement
             return rs.getInt(1); // get the statement output
         } catch (SQLException e) {
             e.printStackTrace();

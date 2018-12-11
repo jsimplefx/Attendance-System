@@ -1,6 +1,8 @@
 package List;
 
 import Classes.Student;
+import Classes.Teacher;
+import Login.LoginModel;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import dbConnection.Connect;
@@ -66,6 +68,8 @@ public class ListController implements Initializable {
     // an observable list of students
     private ObservableList<Student> students = FXCollections.observableArrayList();
 
+    // get logged in teacher
+    private Teacher logged = LoginModel.getLogged();
     // get connection
     private Connection conns = Connect.getConnect();
 
@@ -99,7 +103,7 @@ public class ListController implements Initializable {
     @FXML
     void addRow() { // add new student
         checkConn();
-        String query = "insert into Students (ID, name, email, absences, bar) values(?, ?, ?, ?, ?)";
+        String query = "insert into '" + logged.getID() + "' (ID, name, email, absences, bar) values(?, ?, ?, ?, ?)";
 
         try {
             PreparedStatement pst = Objects.requireNonNull(conns).prepareStatement(query);
@@ -141,7 +145,7 @@ public class ListController implements Initializable {
         alert.getButtonTypes().setAll(Yes, No);
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == Yes) {
-            String query = String.format("delete from Students where id=%d", stud.getID());
+            String query = String.format("delete from '" + logged.getID() + "' where id=%d", stud.getID());
             try {
 
                 PreparedStatement pst = Objects.requireNonNull(conns).prepareStatement(query);
@@ -158,7 +162,7 @@ public class ListController implements Initializable {
         list_table.getItems().clear(); // clear table content before adding them again
         try {
             checkConn();
-            ResultSet rs = Objects.requireNonNull(conns).createStatement().executeQuery(" select * from Students"); // sql statement
+            ResultSet rs = Objects.requireNonNull(conns).createStatement().executeQuery(" select * from '" + logged.getID() + "'"); // sql statement
             while (rs.next()){
                 // store each row in a student object
                 students.add(new Student(rs.getInt("ID"), rs.getString("name"),
@@ -181,7 +185,7 @@ public class ListController implements Initializable {
 
     public void updateCol(TableColumn.CellEditEvent edditedcell){
         Student selected =  list_table.getSelectionModel().getSelectedItem(); // get the student being edited right now
-        String query = "update Students set " +  edditedcell.getTableColumn().getText().toLowerCase().split(" ")[0] + " = ? where id = ?";
+        String query = "update '" + logged.getID() + "' set " +  edditedcell.getTableColumn().getText().toLowerCase().split(" ")[0] + " = ? where id = ?";
         try {
             checkConn(); // check connection
             PreparedStatement pst = Objects.requireNonNull(conns).prepareStatement(query); // sql statement
