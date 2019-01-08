@@ -6,18 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Attendance_Final.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/JavaFXApp.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/JavaFXApp.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/dark_emperor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/dark_emperor.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Database/PersonDB.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Attendance/AttendanceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Attendance/AttendanceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Classes/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/List/List.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/List/List.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/List/ListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/List/ListController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dbConnection/Connect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbConnection/Connect.java" afterDir="false" />
-    </list>
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -88,8 +77,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/List/ListController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1232">
-              <caret line="243" column="84" selection-start-line="243" selection-start-column="84" selection-end-line="243" selection-end-column="84" />
+            <state relative-caret-position="-3826">
+              <caret line="112" column="36" lean-forward="true" selection-start-line="112" selection-start-column="36" selection-end-line="112" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -178,6 +167,7 @@
         <option value="$PROJECT_DIR$/src/Classes/Student.java" />
         <option value="$PROJECT_DIR$/src/Attendance/AttendanceController.java" />
         <option value="$PROJECT_DIR$/src/List/ListController.java" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -218,29 +208,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Attendance Final" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Attendance Final" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Attendance Final" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Attendance Final" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Attendance Final" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Attendance Final" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Login" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
+      <pane id="ProjectPane" />
       <pane id="PackagesPane">
         <subPane>
           <expand>
@@ -248,45 +216,11 @@
               <item name="Attendance Final" type="58d84e3e:PackageViewProjectNode" />
               <item name="Attendance Final" type="616d4139:PackageViewModuleNode" />
             </path>
-            <path>
-              <item name="Attendance Final" type="58d84e3e:PackageViewProjectNode" />
-              <item name="Attendance Final" type="616d4139:PackageViewModuleNode" />
-              <item name="AboutApp" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="Attendance Final" type="58d84e3e:PackageViewProjectNode" />
-              <item name="Attendance Final" type="616d4139:PackageViewModuleNode" />
-              <item name="AboutLecturer" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="Attendance Final" type="58d84e3e:PackageViewProjectNode" />
-              <item name="Attendance Final" type="616d4139:PackageViewModuleNode" />
-              <item name="Attendance" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="Attendance Final" type="58d84e3e:PackageViewProjectNode" />
-              <item name="Attendance Final" type="616d4139:PackageViewModuleNode" />
-              <item name="Classes" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="Attendance Final" type="58d84e3e:PackageViewProjectNode" />
-              <item name="Attendance Final" type="616d4139:PackageViewModuleNode" />
-              <item name="Dashboard" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="Attendance Final" type="58d84e3e:PackageViewProjectNode" />
-              <item name="Attendance Final" type="616d4139:PackageViewModuleNode" />
-              <item name="dbConnection" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="Attendance Final" type="58d84e3e:PackageViewProjectNode" />
-              <item name="Attendance Final" type="616d4139:PackageViewModuleNode" />
-              <item name="List" type="1f31426a:PackageElementNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -306,7 +240,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SearchEverywhereHistoryKey" value="logout&#9;PSI&#9;JAVA://Sidebar.SidebarController#logoutNow&#10;delete&#9;PSI&#9;JAVA://List.ListController#deleteRow" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547140917089" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547141688506" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/Business_App_JavaFX-master/TransConnect System" />
@@ -316,7 +250,7 @@
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="MTConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -443,7 +377,7 @@
     <frame x="0" y="0" width="1366" height="768" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" x="257" y="92" width="196" height="676" id="Project" order="0" sideWeight="0.6703755" weight="0.14787701" />
+      <window_info content_ui="combo" x="257" y="92" width="196" height="676" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.14787701" />
       <window_info id="Structure" order="1" weight="0.18655589" />
       <window_info id="Favorites" order="2" weight="0.32930514" />
       <window_info id="Designer" order="3" />
@@ -452,7 +386,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32711622" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.34933335" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.34920636" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39940828" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -529,28 +463,28 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Attendance/Attendance.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Dashboard/Dashboard.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2913">
           <caret line="6" column="35" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Login/Login.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="155">
           <caret line="12" column="60" selection-start-line="12" selection-start-column="60" selection-end-line="12" selection-end-column="60" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/default.png">
       <provider selected="true" editor-type-id="images" />
@@ -564,24 +498,24 @@
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/controlsfx-8.40.13.jar!/controlsfx_ar.properties">
+      <provider editor-type-id="ResourceBundle" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1209" />
       </provider>
-      <provider editor-type-id="ResourceBundle" />
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/controlsfx-8.40.13.jar!/controlsfx_uk.properties">
-      <provider selected="true" editor-type-id="text-editor" />
       <provider editor-type-id="ResourceBundle" />
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/controlsfx-8.40.13.jar!/controlsfx_zh_CN.properties">
-      <provider selected="true" editor-type-id="text-editor" />
       <provider editor-type-id="ResourceBundle" />
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/controlsfx-8.40.13.jar!/controlsfx.properties">
+      <provider editor-type-id="ResourceBundle" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1174" />
       </provider>
-      <provider editor-type-id="ResourceBundle" />
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/jfoenix-8.0.7.jar!/com/jfoenix/animation/alert/CenterTransition.class">
       <provider selected="true" editor-type-id="text-editor">
@@ -640,12 +574,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Sidebar/Sidebar.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3422">
           <caret line="9" column="35" lean-forward="true" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Classes/Person.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -749,9 +683,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Database/PersonDB.db">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -826,17 +757,28 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/List/List.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="179">
           <caret line="35" column="25" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="161">
+            <caret line="7" column="23" lean-forward="true" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/List/ListController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1232">
-          <caret line="243" column="84" selection-start-line="243" selection-start-column="84" selection-end-line="243" selection-end-column="84" />
+        <state relative-caret-position="-3826">
+          <caret line="112" column="36" lean-forward="true" selection-start-line="112" selection-start-column="36" selection-end-line="112" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
