@@ -72,7 +72,7 @@ public class AttendanceController implements Initializable {
             while (rs.next()){
                 // store each row in a student object
                 students.add(new Student(rs.getInt("ID"), rs.getString("name"),
-                            rs.getString("excuse"), rs.getString("present")));
+                            rs.getString("excuse"), rs.getString("present"), rs.getString("subjects")));
             }
             rs.close(); // close statement
             conns.close(); // close connection for now

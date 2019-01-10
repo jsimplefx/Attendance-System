@@ -1,0 +1,25 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="Attendance Final">
+    <output-path>$PROJECT_DIR$/out/artifacts/Attendance_Final</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="Login.Main" />
+        <option name="description" value="" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="nativeBundle" value="exe" />
+        <option name="title" value="Attendance System" />
+        <option name="vendor" value="" />
+        <option name="version" value="" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="Attendance_Final.jar">
+        <element id="module-output" name="Attendance Final" />
+        <element id="library" level="project" name="com.calendarfx:view:8.5.0" />
+        <element id="library" level="project" name="fontawesomefx-8.9" />
+        <element id="library" level="project" name="jfoenix-8.0.7" />
+        <element id="library" level="project" name="sqlite-jdbc-3.23.1" />
+      </element>
+    </root>
+  </artifact>
+</component>

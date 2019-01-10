@@ -5,22 +5,25 @@ public class Student extends Person{
     private String excuse;
     private String present;
     private String bar_status;
+    private String subjects;
     // a constructor for the students list page
-    public Student(int ID, String name, String gender, String mail, String absences, String bar_status) {
+    public Student(int ID, String name, String gender, String mail, String absences, String bar_status, String subjects) {
         this.name = name;
         this.ID = ID;
         this.gender = gender;
         this.email = mail;
         this.absences = absences;
         this.bar_status = bar_status;
+        this.subjects = subjects;
     }
 
     // a constructor with last excuse
-    public Student( int ID, String name, String excuse, String present) {
+    public Student( int ID, String name, String excuse, String present, String subjects) {
         this.name = name;
         this.ID = ID;
         this.present = present;
         this.excuse = excuse;
+        this.subjects = subjects;
     }
 
     public String getAbsences() {
@@ -53,5 +56,13 @@ public class Student extends Person{
 
     public void setBar_status(String bar_status) {
         this.bar_status = bar_status;
+    }
+
+    public String getSubjects() {
+        return subjects;
+    }
+
+    public void setSubjects(String subjects) {
+        this.subjects = subjects;
     }
 }
