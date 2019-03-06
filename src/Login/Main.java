@@ -19,7 +19,7 @@ public class Main extends Application {
         primaryStage.setTitle("Login");
         primaryStage.getIcons().add(new Image("resources/window.png")); // set window icon
         primaryStage.setScene(new Scene(root, 480, 400));
-        primaryStage.setResizable(false); // make the window unresizable (easier to design and no need to worry about that anymore)
+//        primaryStage.setResizable(false); // make the window unresizable (easier to design and no need to worry about that anymore)
         primaryStage.show();
         // ask user to confirm if they tried to close the program
         primaryStage.setOnCloseRequest(we -> {
