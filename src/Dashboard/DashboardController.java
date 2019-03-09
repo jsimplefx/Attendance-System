@@ -51,7 +51,7 @@ public class DashboardController implements Initializable {
         abs_num.setText(String.valueOf(getAbsentStudentsNum())); // set number of absent students in last class label
         // calculate percentage for students attendance
         double percent = 100 - (((double) getAbsentStudentsNum() / (double) getStudentsNum()) * 100);
-        atten_percent.setText(String.valueOf(Math.round(percent)) + "%"); // set attendance percentage label
+        atten_percent.setText(Math.round(percent) + "%"); // set attendance percentage label
         barred_num.setText(String.valueOf(getBarredStudentsNum())); //  set number of barred students label
 
     }
@@ -114,11 +114,10 @@ public class DashboardController implements Initializable {
 
     // get number of classes.
     private int getClassesNum(){
-        Teacher teacher = LoginModel.getLogged(); // get logged in teacher object
         String subs; // temp for holding the value from sql
         checkConn();
         try {
-            ResultSet rs = Objects.requireNonNull(conn).createStatement().executeQuery(" select * from Teachers where id = " + teacher.getID()); // sql statement
+            ResultSet rs = Objects.requireNonNull(conn).createStatement().executeQuery(" select * from Teachers where id = " + logged.getID()); // sql statement
             subs =  rs.getString("subjects");
             // close query
             rs.close(); // close statement
