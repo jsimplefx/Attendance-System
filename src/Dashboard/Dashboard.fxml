@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="542.0" prefWidth="860.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Dashboard.DashboardController">
-   <Label fx:id="date" alignment="CENTER" contentDisplay="CENTER" layoutX="104.0" layoutY="32.0" prefHeight="59.0" prefWidth="630.0" text="Current Stats" textAlignment="CENTER">
+   <Label fx:id="Welcome" alignment="CENTER" contentDisplay="CENTER" layoutX="104.0" layoutY="32.0" prefHeight="59.0" prefWidth="630.0" text="Current Stats" textAlignment="CENTER">
       <font>
          <Font name="SF Compact Display Bold" size="30.0" />
       </font>

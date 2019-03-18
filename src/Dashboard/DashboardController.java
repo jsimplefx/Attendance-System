@@ -11,14 +11,13 @@ import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Date;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class DashboardController implements Initializable {
 
     @FXML
-    private Label date;
+    private Label Welcome;
 
     @FXML
     private Label stud_num;
@@ -44,8 +43,7 @@ public class DashboardController implements Initializable {
         // this function right here is why i
         // with my fully functioning brain love java now
         // that doesn't make it less of a meme anyway
-        Date current = new Date(); // get current date and time
-        date.setText(String.valueOf(current)); // set the date label text
+        Welcome.setText("Welcome Back!"); // set the date label text
         stud_num.setText(String.valueOf(getStudentsNum())); //set number of students label
         classes_num.setText(String.valueOf(getClassesNum())); // set number of classes label
         abs_num.setText(String.valueOf(getAbsentStudentsNum())); // set number of absent students in last class label
