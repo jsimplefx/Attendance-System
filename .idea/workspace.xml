@@ -7,13 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/dark_emperor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/dark_emperor.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AboutLecturer/AboutLecturer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/AboutLecturer/AboutLecturer.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AboutLecturer/AboutLecturerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AboutLecturer/AboutLecturerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Dashboard/Dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dashboard/Dashboard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Dashboard/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dashboard/DashboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Database/PersonDB.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/PersonDB.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Attendance/Attendance.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Attendance/Attendance.fxml" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -116,11 +111,21 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Dashboard/DashboardController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
+            <state relative-caret-position="422">
               <caret line="19" selection-start-line="19" selection-end-line="19" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Dashboard/Dashboard.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="157" column="75" lean-forward="true" selection-start-line="157" selection-start-column="75" selection-end-line="157" selection-end-column="75" />
             </state>
           </provider>
         </entry>
@@ -137,7 +142,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AboutLecturer/AboutLecturerController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="298">
@@ -211,7 +216,6 @@
         <option value="$PROJECT_DIR$/src/Attendance/Attendance.fxml" />
         <option value="$PROJECT_DIR$/src/AboutLecturer/AboutLecturer.fxml" />
         <option value="$PROJECT_DIR$/src/Classes/Teacher.java" />
-        <option value="$PROJECT_DIR$/src/Dashboard/Dashboard.fxml" />
         <option value="$PROJECT_DIR$/src/example.fxml" />
         <option value="$PROJECT_DIR$/src/Login/LoginController.java" />
         <option value="$PROJECT_DIR$/src/Login/LoginModel.java" />
@@ -229,6 +233,7 @@
         <option value="$PROJECT_DIR$/src/Dashboard/DashboardController.java" />
         <option value="$PROJECT_DIR$/src/AboutApp/AboutAppController.java" />
         <option value="$PROJECT_DIR$/src/AboutLecturer/AboutLecturerController.java" />
+        <option value="$PROJECT_DIR$/src/Dashboard/Dashboard.fxml" />
       </list>
     </option>
   </component>
@@ -293,6 +298,12 @@
               <item name="Attendance Final" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="AboutLecturer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Attendance Final" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Attendance Final" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Attendance" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Attendance Final" type="b2602c69:ProjectViewProjectNode" />
@@ -367,7 +378,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SearchEverywhereHistoryKey" value="logout&#9;PSI&#9;JAVA://Sidebar.SidebarController#logoutNow&#10;delete&#9;PSI&#9;JAVA://List.ListController#deleteRow" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552928645229" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552929215457" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/Business_App_JavaFX-master/TransConnect System" />
@@ -504,9 +515,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="768" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" x="257" y="92" width="196" height="676" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.14787701" />
+      <window_info active="true" content_ui="combo" x="257" y="92" width="196" height="676" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.14787701" />
       <window_info id="Structure" order="1" weight="0.18655589" />
       <window_info id="Favorites" order="2" weight="0.32869694" />
       <window_info id="Designer" order="3" />
@@ -515,7 +525,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32711622" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.34857142" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.34857142" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39857143" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -602,9 +612,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/resources/default.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/maxresdefault.jpg" />
     <entry file="file://$PROJECT_DIR$/src/resources/IIUM.png">
       <provider selected="true" editor-type-id="images" />
@@ -862,16 +869,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Dashboard/DashboardController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/List/ListController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
@@ -893,6 +890,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="298">
           <caret line="49" column="38" selection-start-line="49" selection-start-column="38" selection-end-line="49" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Dashboard/DashboardController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="422">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Dashboard/Dashboard.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="157" column="75" lean-forward="true" selection-start-line="157" selection-start-column="75" selection-end-line="157" selection-end-column="75" />
         </state>
       </provider>
     </entry>

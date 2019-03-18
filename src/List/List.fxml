@@ -16,7 +16,7 @@
           <TableColumn fx:id="name_col" onEditCommit="#updateCol" prefWidth="238.0" text="Name" />
           <TableColumn fx:id="past_col" minWidth="0.0" onEditCommit="#updateCol" prefWidth="99.0" text="Absences" />
           <TableColumn fx:id="bar_col" minWidth="0.0" onEditCommit="#updateCol" prefWidth="102.0" text="Bar Status" />
-         <TableColumn fx:id="mail_col" minWidth="0.0" onEditCommit="#updateCol" prefWidth="245.0" text="Email" />
+         <TableColumn fx:id="mail_col" minWidth="0.0" onEditCommit="#updateCol" prefWidth="229.0" text="Email" />
       </columns>
     </TableView>
     <JFXTextField fx:id="id_field" layoutX="14.0" layoutY="510.0" prefHeight="26.0" prefWidth="68.0" promptText="ID" />
