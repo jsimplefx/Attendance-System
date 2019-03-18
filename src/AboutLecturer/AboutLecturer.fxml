@@ -14,49 +14,49 @@
             <Image url="@../resources/default.png" />
          </image>
       </ImageView>
-      <Label fx:id="ID" layoutX="277.0" layoutY="67.0" prefHeight="22.0" prefWidth="257.0" text="ID">
+      <Label fx:id="ID" layoutX="286.0" layoutY="67.0" prefHeight="22.0" prefWidth="257.0" text="ID">
          <font>
             <Font name="SF Compact Display Regular" size="18.0" />
          </font></Label>
-      <Label fx:id="email" layoutX="303.0" layoutY="132.0" prefHeight="22.0" prefWidth="448.0" text="Email">
+      <Label fx:id="email" layoutX="314.0" layoutY="132.0" prefHeight="22.0" prefWidth="448.0" text="Email">
          <font>
             <Font name="SF Compact Display Regular" size="18.0" />
          </font></Label>
-      <Label fx:id="name" layoutX="307.0" layoutY="36.0" prefHeight="22.0" prefWidth="448.0" text="Name">
+      <Label fx:id="name" layoutX="319.0" layoutY="36.0" prefHeight="22.0" prefWidth="448.0" text="Name">
          <font>
             <Font name="SF Compact Display Regular" size="18.0" />
          </font></Label>
-      <Label fx:id="gender" layoutX="316.0" layoutY="98.0" prefHeight="19.0" prefWidth="220.0" text="Gender">
+      <Label fx:id="gender" layoutX="330.0" layoutY="98.0" prefHeight="19.0" prefWidth="220.0" text="Gender">
          <font>
             <Font name="SF Compact Display Regular" size="18.0" />
          </font></Label>
-      <Label fx:id="subjects" layoutX="329.0" layoutY="198.0" prefHeight="22.0" prefWidth="448.0" text="Subjects">
+      <Label fx:id="subjects" layoutX="342.0" layoutY="198.0" prefHeight="22.0" prefWidth="448.0" text="Subjects">
          <font>
             <Font name="SF Compact Display Regular" size="18.0" />
          </font>
       </Label>
       <Label fx:id="exp" alignment="TOP_CENTER" layoutX="48.0" layoutY="298.0" prefHeight="201.0" prefWidth="699.0" text="exp" />
-      <Label layoutX="252.0" layoutY="36.0" prefHeight="19.0" prefWidth="52.0" text="Name:">
+      <Label layoutX="252.0" layoutY="36.0" prefHeight="23.0" prefWidth="63.0" text="Name:">
          <font>
             <Font name="SF Compact Display Medium" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="252.0" layoutY="67.0" prefHeight="19.0" prefWidth="22.0" text="ID:">
+      <Label layoutX="252.0" layoutY="67.0" prefHeight="23.0" prefWidth="37.0" text="ID:">
          <font>
             <Font name="SF Compact Display Medium" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="252.0" layoutY="98.0" prefHeight="19.0" prefWidth="63.0" text="Gender:">
+      <Label layoutX="252.0" layoutY="98.0" prefHeight="23.0" prefWidth="79.0" text="Gender:">
          <font>
             <Font name="SF Compact Display Medium" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="252.0" layoutY="132.0" prefHeight="19.0" prefWidth="52.0" text="Email:">
+      <Label layoutX="252.0" layoutY="132.0" prefHeight="23.0" prefWidth="63.0" text="Email:">
          <font>
             <Font name="SF Compact Display Medium" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="252.0" layoutY="198.0" prefHeight="22.0" prefWidth="79.0" text="Subjects:">
+      <Label layoutX="252.0" layoutY="198.0" prefHeight="23.0" prefWidth="99.0" text="Subjects:">
          <font>
             <Font name="SF Compact Display Medium" size="18.0" />
          </font>
@@ -66,12 +66,12 @@
             <Font name="SF Compact Display Medium" size="18.0" />
          </font>
       </Label>
-      <Label fx:id="number" layoutX="379.0" layoutY="166.0" prefHeight="22.0" prefWidth="364.0" text="Number">
+      <Label fx:id="number" layoutX="404.0" layoutY="166.0" prefHeight="22.0" prefWidth="364.0" text="Number">
          <font>
             <Font name="SF Compact Display Regular" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="252.0" layoutY="166.0" prefHeight="22.0" prefWidth="131.0" text="Phone Number:">
+      <Label layoutX="252.0" layoutY="166.0" prefHeight="23.0" prefWidth="153.0" text="Phone Number:">
          <font>
             <Font name="SF Compact Display Medium" size="18.0" />
          </font>

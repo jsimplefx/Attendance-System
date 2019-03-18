@@ -40,7 +40,15 @@ public class AboutLecturerController implements Initializable {
         ID.setText(Integer.toString(teacher.getID()));
         email.setText(teacher.getEmail());
         gender.setText(teacher.getGender());
-        subjects.setText(teacher.getSubjects());
+        String[] subj = teacher.getSubjects().split(" ");
+        subjects.setText(""); // we set it to an empty string so it wont overlap in the next for loop
+        for (int i = 0; i < subj.length; i++) {
+            if (i == subj.length - 1){ // to prevent adding another comma at the end of the last subject
+                subjects.setText(subjects.getText() + subj[i]);
+                break;
+            }
+            subjects.setText(subjects.getText() + subj[i] + ", ");
+        }
         exp.setText(teacher.getXP());
         number.setText(String.valueOf(teacher.getPhone()));
 
