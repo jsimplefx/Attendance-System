@@ -14,8 +14,11 @@
 - filters(by inputted word, course)  
 - GUI build with [JFoenix Library](https://github.com/jfoenixadmin/JFoenix)  
 
+### Login Credentials:
+> Username: 1625897  
+> Password: blacksuan19
 ### Upcoming:
-- [ ] Update about app page  
+- [X] Update about app page  
 
 ### Screenshots:  
 
