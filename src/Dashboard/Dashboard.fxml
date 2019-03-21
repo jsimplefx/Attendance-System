@@ -30,7 +30,7 @@
             <children>
                <Label fx:id="stud_num" alignment="CENTER" text="00" textFill="#dddbdb">
                   <HBox.margin>
-                     <Insets left="40.0" top="16.0" />
+                     <Insets left="35.0" top="16.0" />
                   </HBox.margin>
                   <font>
                      <Font name="SF Compact Display Regular" size="18.0" />
@@ -61,7 +61,7 @@
                      <Font name="SF Compact Display Regular" size="18.0" />
                   </font>
                   <HBox.margin>
-                     <Insets left="40.0" top="16.0" />
+                     <Insets left="35.0" top="16.0" />
                   </HBox.margin>
                </Label>
                <Label fx:id="stud_num11" text="Classe(s)" textFill="#dddbdb">
@@ -115,22 +115,22 @@
                </HBox.margin>
             </FontAwesomeIconView>
          </HBox>
-         <HBox prefHeight="60.0" prefWidth="100.0" spacing="10.0" style="-fx-background-color: #303952;" styleClass="bottom_stats">
+         <HBox prefHeight="60.0" prefWidth="100.0" spacing="5.0" style="-fx-background-color: #303952;" styleClass="bottom_stats">
             <children>
-               <Label fx:id="atten_percent" alignment="CENTER" prefHeight="26.0" prefWidth="34.0" text="000" textFill="#dddbdb">
+               <Label fx:id="atten_percent" alignment="CENTER" prefHeight="26.0" prefWidth="96.0" text="000" textFill="#dddbdb">
                   <font>
                      <Font name="SF Compact Display Regular" size="18.0" />
                   </font>
                   <HBox.margin>
-                     <Insets left="25.0" top="14.0" />
+                     <Insets left="10.0" top="14.0" />
                   </HBox.margin>
                </Label>
-               <Label fx:id="stud_num13" text="Attendance" textFill="#dddbdb">
+               <Label fx:id="stud_num13" prefHeight="23.0" prefWidth="153.0" text="Attendance" textFill="#dddbdb">
                   <font>
                      <Font name="SF Compact Display Regular" size="18.0" />
                   </font>
                   <HBox.margin>
-                     <Insets top="16.0" />
+                     <Insets right="10.0" top="16.0" />
                   </HBox.margin>
                </Label>
             </children></HBox>
@@ -150,7 +150,7 @@
                      <Font name="SF Compact Display Regular" size="18.0" />
                   </font>
                   <HBox.margin>
-                     <Insets left="50.0" top="16.0" />
+                     <Insets left="45.0" top="16.0" />
                   </HBox.margin>
                </Label>
                <Label fx:id="stud_num14" text="Barred" textFill="#dddbdb">

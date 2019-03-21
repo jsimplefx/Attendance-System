@@ -1,6 +1,7 @@
 package Login;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -31,7 +32,11 @@ public class Main extends Application {
             ButtonType No = new ButtonType("No");
             alert.getButtonTypes().setAll(Yes, No);
             Optional<ButtonType> result = alert.showAndWait();
-            if (result.get() == Yes) primaryStage.close();
+            if (result.get() == Yes){
+                // exit the app using platforms preferred way.
+                Platform.exit();
+                System.exit(0);
+            }
         });
     }
 
