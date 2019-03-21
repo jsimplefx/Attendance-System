@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -8,40 +9,40 @@
 
 <AnchorPane prefHeight="550.0" prefWidth="820.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AboutApp.AboutAppController">
    <children>
-      <Label alignment="CENTER" layoutX="146.0" layoutY="14.0" prefHeight="27.0" prefWidth="528.0" text="Students Attendance System">
-         <font>
-            <Font name="SF Compact Display Regular" size="18.0" />
-         </font>
-      </Label>
-      <ImageView fitHeight="240.0" fitWidth="264.0" layoutX="290.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="283.0" fitWidth="309.0" layoutX="269.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../resources/window.png" />
          </image>
       </ImageView>
-      <Label alignment="CENTER" layoutX="146.0" layoutY="342.0" prefHeight="27.0" prefWidth="528.0" text="By" underline="true">
+      <Label alignment="CENTER" layoutX="146.0" layoutY="334.0" prefHeight="27.0" prefWidth="528.0" text="By">
          <font>
             <Font name="SF Compact Display Regular" size="18.0" />
          </font>
       </Label>
-      <Label alignment="TOP_LEFT" layoutX="128.0" layoutY="392.0" prefHeight="27.0" prefWidth="565.0" text="ABUBAKAR YAGOUB IBRAHIM OMER                                                            1625897">
+      <Label alignment="TOP_LEFT" layoutX="344.0" layoutY="411.0" prefHeight="27.0" prefWidth="134.0" text="Used Libraries">
          <font>
             <Font name="SF Compact Display Regular" size="18.0" />
          </font>
       </Label>
-      <Label alignment="TOP_LEFT" layoutX="128.0" layoutY="426.0" prefHeight="27.0" prefWidth="565.0" text="IRIEN AKTER                                                                                                             1632528">
+      <Hyperlink fx:id="jfx" layoutX="371.0" layoutY="447.0" text="JFoenix">
          <font>
-            <Font name="SF Compact Display Regular" size="18.0" />
+            <Font size="18.0" />
          </font>
-      </Label>
-      <Label alignment="TOP_LEFT" layoutX="128.0" layoutY="462.0" prefHeight="27.0" prefWidth="565.0" text="SYED MUHAMMAD AIMAN                                                                                 1727935">
+      </Hyperlink>
+      <Hyperlink fx:id="suan" layoutX="348.0" layoutY="370.0" text="Blacksuan19">
          <font>
-            <Font name="SF Compact Display Regular" size="18.0" />
+            <Font size="18.0" />
          </font>
-      </Label>
-      <Label alignment="TOP_LEFT" layoutX="128.0" layoutY="492.0" prefHeight="27.0" prefWidth="565.0" text="MUHAMMAD SYAMIM MOHD SUKARDI                                                        1722396">
+      </Hyperlink>
+      <Hyperlink fx:id="fawesome" layoutX="339.0" layoutY="478.0" text="Font Awesome">
          <font>
-            <Font name="SF Compact Display Regular" size="18.0" />
+            <Font size="18.0" />
          </font>
-      </Label>
+      </Hyperlink>
+      <Hyperlink fx:id="cfx" layoutX="356.0" layoutY="511.0" text="ControlsFX">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Hyperlink>
    </children>
 </AnchorPane>
