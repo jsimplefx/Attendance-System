@@ -6,8 +6,7 @@
         <option name="appClass" value="Login.Main" />
         <option name="description" value="" />
         <option name="htmlPlaceholderId" value="" />
-        <option name="nativeBundle" value="exe" />
-        <option name="title" value="Attendance System" />
+        <option name="title" value="" />
         <option name="vendor" value="" />
         <option name="version" value="" />
       </options>
@@ -15,10 +14,16 @@
     <root id="root">
       <element id="archive" name="Attendance_Final.jar">
         <element id="module-output" name="Attendance Final" />
-        <element id="library" level="project" name="com.calendarfx:view:8.5.0" />
-        <element id="library" level="project" name="fontawesomefx-8.9" />
-        <element id="library" level="project" name="jfoenix-8.0.7" />
-        <element id="library" level="project" name="sqlite-jdbc-3.23.1" />
+      </element>
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/annotations-16.0.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/fontawesomefx-8.9.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/fontawesomefx-commons-8.13.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/fontawesomefx-fontawesome-4.7.0-1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/jfoenix-8.0.7.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/recurrence-8.5.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/sqlite-jdbc-3.23.1.jar" path-in-jar="/" />
+      <element id="directory" name="Database">
+        <element id="dir-copy" path="$PROJECT_DIR$/Database" />
       </element>
     </root>
   </artifact>

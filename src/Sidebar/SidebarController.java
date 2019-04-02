@@ -31,27 +31,27 @@ public class SidebarController implements Initializable {
 
     // handle buttons press events.
     @FXML private void DashboardBtnPressed() throws IOException {
-        loadPane("../Dashboard/Dashboard");
+        loadPane("/Dashboard/Dashboard");
     }
 
     // handle buttons press events.
     @FXML private void AttenBtnPressed() throws IOException {
-        loadPane("../Attendance/Attendance");
+        loadPane("/Attendance/Attendance");
     }
 
     // handle buttons press events.
     @FXML private void ListBtnPressed() throws IOException {
-        loadPane("../List/List");
+        loadPane("/List/List");
     }
 
     // handle buttons press events.
     @FXML public void AboutBtnPressed() throws IOException {
-        loadPane("../AboutLecturer/AboutLecturer");
+        loadPane("/AboutLecturer/AboutLecturer");
     }
 
     // handle buttons press events.
     @FXML private void SettingsBtnPressed() throws IOException {
-        loadPane("../AboutApp/AboutApp");
+        loadPane("/AboutApp/AboutApp");
     }
 
     // function to set the borderPane center to the passed fxml file
@@ -71,7 +71,7 @@ public class SidebarController implements Initializable {
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == Yes){
             // back to the main scene if user selected to logout
-            Parent Logout = FXMLLoader.load(getClass().getResource("../Login/Login.fxml"));
+            Parent Logout = FXMLLoader.load(getClass().getResource("/Login/Login.fxml"));
             Scene Login = new Scene(Logout);
             //This line gets the Stage information
             Stage window = (Stage)((Node)event.getSource()).getScene().getWindow(); // use the same stage again
@@ -88,7 +88,7 @@ public class SidebarController implements Initializable {
 
         // set the dashboard as default view when user logs in
         try {
-            loadPane("../Dashboard/Dashboard");
+            loadPane("/Dashboard/Dashboard");
         } catch (IOException e) {
             e.printStackTrace();
         }
