@@ -44,6 +44,7 @@ public class DashboardController implements Initializable {
         // with my fully functioning brain love java now
         // that doesn't make it less of a meme anyway
         Welcome.setText("Welcome Back!"); // set the date label text
+        Welcome.setStyle("-fx-font-weight: Bold");
         stud_num.setText(String.valueOf(getStudentsNum())); //set number of students label
         classes_num.setText(String.valueOf(getClassesNum())); // set number of classes label
         abs_num.setText(String.valueOf(getAbsentStudentsNum())); // set number of absent students in last class label

@@ -10,12 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/blacksuan19.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Login/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Login/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Sidebar/Sidebar.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sidebar/Sidebar.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Dashboard/Dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dashboard/Dashboard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Dashboard/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dashboard/DashboardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Sidebar/SidebarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sidebar/SidebarController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StyleCheet/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/StyleCheet/style.css" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -153,11 +151,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Sidebar/SidebarController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1906">
-              <caret line="28" selection-start-line="28" selection-end-line="28" />
+            <state relative-caret-position="1449">
+              <caret line="117" column="5" lean-forward="true" selection-start-line="117" selection-start-column="5" selection-end-line="117" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Dashboard/DashboardController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="218">
+              <caret line="44" column="53" lean-forward="true" selection-start-line="44" selection-start-column="53" selection-end-line="44" selection-end-column="53" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -242,7 +252,6 @@
         <option value="$PROJECT_DIR$/src/Attendance/AttendanceController.java" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/Classes/Person.java" />
-        <option value="$PROJECT_DIR$/src/Dashboard/DashboardController.java" />
         <option value="$PROJECT_DIR$/src/AboutLecturer/AboutLecturerController.java" />
         <option value="$PROJECT_DIR$/src/Dashboard/Dashboard.fxml" />
         <option value="$PROJECT_DIR$/Attendance Final.iml" />
@@ -256,6 +265,7 @@
         <option value="$PROJECT_DIR$/src/Sidebar/Sidebar.fxml" />
         <option value="$PROJECT_DIR$/src/StyleCheet/style.css" />
         <option value="$PROJECT_DIR$/src/Sidebar/SidebarController.java" />
+        <option value="$PROJECT_DIR$/src/Dashboard/DashboardController.java" />
       </list>
     </option>
   </component>
@@ -291,6 +301,11 @@
             <path>
               <item name="Attendance Final" type="58d84e3e:PackageViewProjectNode" />
               <item name="Attendance Final" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="Attendance Final" type="58d84e3e:PackageViewProjectNode" />
+              <item name="Attendance Final" type="616d4139:PackageViewModuleNode" />
+              <item name="Dashboard" type="1f31426a:PackageElementNode" />
             </path>
             <path>
               <item name="Attendance Final" type="58d84e3e:PackageViewProjectNode" />
@@ -455,12 +470,12 @@
       <workItem from="1555389316175" duration="18000" />
       <workItem from="1557346347109" duration="364000" />
       <workItem from="1557425170192" duration="592000" />
-      <workItem from="1558456353898" duration="11283000" />
+      <workItem from="1558456353898" duration="13269000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15035000" />
+    <option name="totallyTimeSpent" value="17021000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -758,16 +773,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Dashboard/DashboardController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dbConnection/Connect.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
@@ -819,8 +824,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Sidebar/SidebarController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1906">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        <state relative-caret-position="1449">
+          <caret line="117" column="5" lean-forward="true" selection-start-line="117" selection-start-column="5" selection-end-line="117" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Dashboard/DashboardController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="44" column="53" lean-forward="true" selection-start-line="44" selection-start-column="53" selection-end-line="44" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

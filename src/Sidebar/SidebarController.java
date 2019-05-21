@@ -7,6 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -112,6 +113,7 @@ public class SidebarController implements Initializable {
     // function to set the borderPane center to the passed fxml file
     private void loadPane(String UI) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource(UI + ".fxml"));
+        BorderPane.setAlignment(root, Pos.CENTER_LEFT);
         homePane.setCenter(root);
     }
 
