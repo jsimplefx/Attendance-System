@@ -13,7 +13,7 @@ public class LoginModel {
     // get connection
     private Connection con = Connect.getConnect();
 
-    private static Teacher logged = new Teacher(); // new teacher to store the logged one in
+    private static Teacher logged; // new teacher to store the logged one in
 
     // check login details
     boolean isCorrect(String User, String Pass) throws SQLException {
@@ -25,14 +25,14 @@ public class LoginModel {
         PreparedStatement statement;
         ResultSet set;
         String query = "select * from Teachers where id = ? and pass = ?";
-            statement = Objects.requireNonNull(con).prepareStatement(query);
-            statement.setString(1, User);
-            statement.setString(2, Pass);
-            set = statement.executeQuery();
+        statement = Objects.requireNonNull(con).prepareStatement(query);
+        statement.setString(1, User);
+        statement.setString(2, Pass);
+        set = statement.executeQuery();
+        if (set.next()) { // only store the logged in user if its correct
             setLogged(set);
-                // close connection after checking login
-            con.close();
-        return set.next();
+            return true;
+        } else return false;
     }
 
      public static Teacher getLogged() {
@@ -45,5 +45,3 @@ public class LoginModel {
                 set.getString("subjects"), set.getString("exp"), set.getLong("phone"));
     }
 }
-
-

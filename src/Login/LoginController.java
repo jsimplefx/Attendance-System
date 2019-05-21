@@ -61,6 +61,7 @@ public class LoginController implements Initializable {
                 }
             });
             // set the wrong data label to visible
+            wrongData.setStyle("-fx-font-weight: bold");
             wrongData.setVisible(true);
         }
     }
