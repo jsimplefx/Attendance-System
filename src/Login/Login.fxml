@@ -8,19 +8,56 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="400.0" prefWidth="500.0" style="-fx-background-color: #95afc0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Login.LoginController">
-    <ImageView fitHeight="118.0" fitWidth="430.0" layoutX="20.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-        <Image url="@../resources/IIUM.png" />
-    </ImageView>
-   <JFXTextField fx:id="id" focusColor="#607d8a" labelFloat="true" layoutX="116.0" layoutY="170.0" prefHeight="30.0" prefWidth="280.0" promptText="User ID" unFocusColor="#757575" />
-   <JFXPasswordField fx:id="pass" focusColor="#607d8a" labelFloat="true" layoutX="116.0" layoutY="241.0" prefHeight="30.0" prefWidth="280.0" promptText="Password" unFocusColor="#607d8a" />
-   <JFXButton fx:id="logBtn" buttonType="RAISED" layoutX="200.0" layoutY="306.0" onAction="#dataCheck" prefHeight="41.0" prefWidth="112.0" ripplerFill="#283593" style="-fx-background-color: #3f51b5;" text="Login" textFill="#fcfafa" />
-   <MaterialDesignIconView glyphName="LOCK" layoutX="83.0" layoutY="273.0" size="25" />
-   <MaterialDesignIconView glyphName="ACCOUNT_CIRCLE" layoutX="82.0" layoutY="203.0" size="25" />
-   <Label fx:id="wrongData" layoutX="192.0" layoutY="360.0" prefHeight="25.0" prefWidth="129.0" text="Wrong Information!" textFill="#d5443c" visible="false" />
+<BorderPane prefHeight="405.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Login.LoginController">
+   <top>
+      <ImageView fitHeight="137.0" fitWidth="471.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+         <image>
+            <Image url="@../resources/login.png" />
+         </image>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </ImageView>
+   </top>
    <padding>
-      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+      <Insets top="10.0" />
    </padding>
-</AnchorPane>
+   <center>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER">
+               <children>
+                  <VBox prefHeight="200.0" prefWidth="50.0" spacing="26.0">
+                     <children>
+                        <MaterialDesignIconView glyphName="LOCK" size="25" />
+                        <MaterialDesignIconView glyphName="ACCOUNT_CIRCLE" size="25" />
+                     </children>
+                     <padding>
+                        <Insets top="60.0" />
+                     </padding>
+                  </VBox>
+                  <VBox prefHeight="204.0" prefWidth="350.0" spacing="20.0">
+                     <children>
+                        <JFXTextField fx:id="id" focusColor="#607d8a" labelFloat="true" prefHeight="30.0" prefWidth="280.0" promptText="User ID" unFocusColor="#757575" />
+                        <JFXPasswordField fx:id="pass" focusColor="#607d8a" labelFloat="true" prefHeight="30.0" prefWidth="280.0" promptText="Password" unFocusColor="#607d8a" />
+                     </children>
+                     <padding>
+                        <Insets top="50.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </HBox>
+            <VBox alignment="CENTER" spacing="20.0">
+               <children>
+                  <JFXButton fx:id="logBtn" buttonType="RAISED" contentDisplay="CENTER" onAction="#dataCheck" prefHeight="41.0" prefWidth="112.0" ripplerFill="#283593" style="-fx-background-color: #3f51b5;" text="Login" textFill="#fcfafa" />
+                  <Label fx:id="wrongData" prefHeight="25.0" prefWidth="129.0" text="Wrong Information!" textFill="#d5443c" visible="false" />
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
