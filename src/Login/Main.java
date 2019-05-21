@@ -19,7 +19,7 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("/Login/Login.fxml"));
         primaryStage.setTitle("Login");
         primaryStage.getIcons().add(new Image("resources/window.png")); // set window icon
-        primaryStage.setScene(new Scene(root, 480, 400));
+        primaryStage.setScene(new Scene(root, 800, 600));
 //        primaryStage.setResizable(false); // make the window unresizable (easier to design and no need to worry about that anymore)
         primaryStage.show();
         // ask user to confirm if they tried to close the program
