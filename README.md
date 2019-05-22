@@ -28,6 +28,9 @@
 - [ ] add filtering to attendance view
 - [ ] switch database to in-memory H2
 
+### Bugs:
+- filtering by subjects doesnt work (yet)
+
 ### Screenshots:
 
 #### Login

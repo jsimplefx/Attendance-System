@@ -111,7 +111,7 @@ public class ListController implements Initializable {
         mail_col.setCellFactory(TextFieldTableCell.forTableColumn()); // enable column editing
         past_col.setCellFactory(TextFieldTableCell.forTableColumn()); // enable column editing
         bar_col.setCellFactory(TextFieldTableCell.forTableColumn()); // enable column editing
-
+        list_table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
         //initialize the drop down menu
         subjs.getItems().add("All");
         String[] subs = logged.getSubjects().split(" ");
@@ -184,7 +184,8 @@ public class ListController implements Initializable {
         list_table.getItems().clear(); // clear table content before adding them again
         try {
             checkConn();
-            ResultSet rs = Objects.requireNonNull(conns).createStatement().executeQuery(" select * from '" + logged.getID() + "'"); // sql statement
+            ResultSet rs = Objects.requireNonNull(conns).createStatement()
+                    .executeQuery(" select * from '" + logged.getID() + "'"); // sql statement
             while (rs.next()) {
                 // store each row in a student object
                 students.add(new Student(rs.getInt("ID"), rs.getString("name"),
