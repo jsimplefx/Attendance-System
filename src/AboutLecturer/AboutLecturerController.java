@@ -63,6 +63,7 @@ public class AboutLecturerController implements Initializable {
         if (teacher.getGender().startsWith("F") || teacher.getGender().startsWith("f")) {
             avatar.setImage((female));
         } else avatar.setImage(male);
+
     }
 
 
