@@ -10,7 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/AboutLecturer/AboutLecturerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AboutLecturer/AboutLecturerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -119,7 +119,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AboutLecturer/AboutLecturerController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1313">
@@ -127,6 +127,18 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="316">
+                <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -214,9 +226,9 @@
         <option value="$APPLICATION_CONFIG_DIR$/idea.properties" />
         <option value="$PROJECT_DIR$/src/Attendance/AttendanceController.java" />
         <option value="$PROJECT_DIR$/src/List/ListController.java" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/AboutApp/AboutAppController.java" />
         <option value="$PROJECT_DIR$/src/AboutLecturer/AboutLecturerController.java" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -454,12 +466,12 @@
       <workItem from="1557425170192" duration="592000" />
       <workItem from="1558456353898" duration="17992000" />
       <workItem from="1558540153325" duration="2352000" />
-      <workItem from="1558542568834" duration="7462000" />
+      <workItem from="1558542568834" duration="8117000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31558000" />
+    <option name="totallyTimeSpent" value="32213000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -472,10 +484,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="8" y="38" width="1350" height="722" extended-state="7" />
+    <frame x="8" y="38" width="1350" height="722" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" x="257" y="92" width="196" height="676" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.16740741" />
+      <window_info active="true" content_ui="combo" x="257" y="92" width="196" height="676" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.16740741" />
       <window_info id="Structure" order="1" weight="0.18655589" />
       <window_info id="Favorites" order="2" weight="0.32869694" />
       <window_info id="Designer" order="3" />
@@ -487,7 +499,7 @@
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Database Changes" order="2" />
       <window_info anchor="bottom" id="Find" order="3" weight="0.3266564" />
-      <window_info active="true" anchor="bottom" id="Run" order="4" visible="true" weight="0.34509203" />
+      <window_info anchor="bottom" id="Run" order="4" weight="0.34509203" />
       <window_info anchor="bottom" id="Debug" order="5" weight="0.39857143" />
       <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
@@ -823,17 +835,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="357">
-            <caret line="32" selection-start-line="32" selection-end-line="32" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/List/ListController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -887,6 +888,17 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="316">
+            <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
