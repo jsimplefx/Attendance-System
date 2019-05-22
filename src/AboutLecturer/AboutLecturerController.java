@@ -5,11 +5,16 @@ import Login.LoginModel;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class AboutLecturerController implements Initializable {
+
+    @FXML
+    private ImageView avatar;
     @FXML
     private Label gender;
 
@@ -52,6 +57,12 @@ public class AboutLecturerController implements Initializable {
         exp.setText(teacher.getXP());
         number.setText(String.valueOf(teacher.getPhone()));
 
+        Image male = new Image("resources/male.png");
+        Image female = new Image("resources/female.png");
+
+        if (teacher.getGender().startsWith("F") || teacher.getGender().startsWith("f")) {
+            avatar.setImage((female));
+        } else avatar.setImage(male);
     }
 
 

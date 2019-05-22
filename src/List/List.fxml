@@ -20,7 +20,7 @@
                   <Font name="SF Compact Display Regular" size="16.0" />
                </font>
             </JFXTextField>
-            <JFXComboBox fx:id="subjs" maxHeight="1.7976931348623157E308" maxWidth="300.0" onAction="#setClass" promptText="All" HBox.hgrow="ALWAYS" />
+            <JFXComboBox fx:id="subjs" maxHeight="1.7976931348623157E308" maxWidth="6.0" onAction="#setClass" promptText="All" HBox.hgrow="ALWAYS" />
          </children>
       </HBox>
       <TableView fx:id="list_table" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" stylesheets="@../StyleCheet/style.css" VBox.vgrow="ALWAYS">
