@@ -55,6 +55,11 @@
 .table-view:focused .table-row-cell:filled:focused:selected {
     -fx-background-color: -fx-focus-color;
 }
+
+.table-column {
+    -fx-alignment: center;
+}
+
 .sidebar-button{
     -fx-background-color: #303952;
 }

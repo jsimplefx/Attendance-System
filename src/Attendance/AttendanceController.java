@@ -62,13 +62,16 @@ public class AttendanceController implements Initializable {
         list_table.setEditable(true); // enable table editing
         excuse_col.setCellFactory(TextFieldTableCell.forTableColumn()); // enable column editing
         present_col.setCellFactory(TextFieldTableCell.forTableColumn()); // enable column editing
+
+        list_table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY); // resize column based on whole table(window) size
     }
 
     private void loadTable() {
         list_table.getItems().clear(); // clear table content before adding them again
         try {
             checkConn(); // check connection
-            ResultSet rs = Objects.requireNonNull(conns).createStatement().executeQuery(" select * from '" + logged.getID() + "'"); // sql statement
+            ResultSet rs = Objects.requireNonNull(conns).createStatement()
+                    .executeQuery(" select * from '" + logged.getID() + "'"); // sql statement
             while (rs.next()) {
                 // store each row in a student object
                 students.add(new Student(rs.getInt("ID"), rs.getString("name"),
@@ -85,7 +88,8 @@ public class AttendanceController implements Initializable {
     public void takeAtten(TableColumn.CellEditEvent edditedcell) {
         Student selected = list_table.getSelectionModel().getSelectedItem(); // get the student being edited right now
 
-        String query = "update '" + logged.getID() + "' set " + edditedcell.getTableColumn().getText().toLowerCase() + " = ? where id = ?"; // sql query
+        String query = "update '" + logged.getID() + "' set " + edditedcell.getTableColumn().getText().toLowerCase()
+                + " = ? where id = ?"; // sql query
         try {
             checkConn(); // check connection
             PreparedStatement pst = Objects.requireNonNull(conns).prepareStatement(query);
