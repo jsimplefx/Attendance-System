@@ -27,36 +27,28 @@ public class AboutAppController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         final String[] URLs = {"https://github.com/Blacksuan19", "https://github.com/jfoenixadmin/JFoenix",
                 "https://bitbucket.org/Jerady/fontawesomefx", "https://github.com/controlsfx/controlsfx"};
-        suan.setOnAction(e -> {
-            try {
-                Desktop.getDesktop().browse(new URL(URLs[0]).toURI());
-            } catch (IOException | URISyntaxException e1) {
-                e1.printStackTrace();
-            }
-        });
 
-        jfx.setOnAction(e -> {
-            try {
-                Desktop.getDesktop().browse(new URL(URLs[1]).toURI());
-            } catch (IOException | URISyntaxException e1) {
-                e1.printStackTrace();
-            }
-        });
+        // disable the stupid focus hint
+        suan.setFocusTraversable(false);
+        jfx.setFocusTraversable(false);
+        fawesome.setFocusTraversable(false);
+        cfx.setFocusTraversable(false);
 
-        fawesome.setOnAction(e -> {
-            try {
-                Desktop.getDesktop().browse(new URL(URLs[2]).toURI());
-            } catch (IOException | URISyntaxException e1) {
-                e1.printStackTrace();
-            }
-        });
+        suan.setOnAction(e -> LoadURL(URLs[0]));
+        jfx.setOnAction(e -> LoadURL(URLs[1]));
+        fawesome.setOnAction(e -> LoadURL(URLs[2]));
+        cfx.setOnAction(e -> LoadURL(URLs[3]));
+    }
 
-        cfx.setOnAction(e -> {
+    private void LoadURL(String URL) {
+        // use a different thread so it wont freeze the GUI
+        new Thread(() -> {
             try {
-                Desktop.getDesktop().browse(new URL(URLs[3]).toURI());
+                Desktop.getDesktop().browse(new URL(URL).toURI());
             } catch (IOException | URISyntaxException e1) {
                 e1.printStackTrace();
             }
-        });
+        }).start();
+
     }
 }
