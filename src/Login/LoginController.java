@@ -6,15 +6,14 @@ import com.jfoenix.validation.NumberValidator;
 import com.jfoenix.validation.RequiredFieldValidator;
 import javafx.beans.binding.Bindings;
 import javafx.beans.binding.BooleanBinding;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -42,7 +41,7 @@ public class LoginController implements Initializable {
 
     // handle login button click event
     @FXML
-    private void dataCheck(ActionEvent event) throws IOException, SQLException {
+    private void dataCheck() throws IOException, SQLException {
         // validation
         if (model.isCorrect(id.getText(), pass.getText())) {
             // switch to the home scene
@@ -52,7 +51,7 @@ public class LoginController implements Initializable {
             Parent homeParent = loader.load();
             Scene home = new Scene(homeParent);
             //This line gets the Stage information
-            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Stage window = (Stage) logBtn.getScene().getWindow();
             window.setTitle("Attendance System");
             window.setScene(home);
             window.show();
@@ -69,6 +68,12 @@ public class LoginController implements Initializable {
             wrongData.setStyle("-fx-font-weight: bold");
             wrongData.setVisible(true);
         }
+    }
+
+    @FXML
+    public void HandleEnter(KeyEvent event) throws IOException, SQLException {
+        // make sure the button is enabled first before doing the action
+        if (!logBtn.isDisabled()) if (event.getCode().toString().equals("ENTER")) dataCheck();
     }
 
     @Override

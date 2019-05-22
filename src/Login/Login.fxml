@@ -42,8 +42,8 @@
                   </VBox>
                   <VBox prefHeight="204.0" prefWidth="350.0" spacing="40.0">
                      <children>
-                        <JFXTextField fx:id="id" focusColor="#607d8a" labelFloat="true" prefHeight="30.0" prefWidth="280.0" promptText="User ID" unFocusColor="#757575" />
-                        <JFXPasswordField fx:id="pass" focusColor="#607d8a" labelFloat="true" prefHeight="30.0" prefWidth="280.0" promptText="Password" unFocusColor="#607d8a" />
+                        <JFXTextField fx:id="id" focusColor="#607d8a" labelFloat="true" onKeyPressed="#HandleEnter" prefHeight="30.0" prefWidth="280.0" promptText="User ID" unFocusColor="#757575" />
+                        <JFXPasswordField fx:id="pass" focusColor="#607d8a" labelFloat="true" onKeyPressed="#HandleEnter" prefHeight="30.0" prefWidth="280.0" promptText="Password" unFocusColor="#607d8a" />
                      </children>
                      <padding>
                         <Insets top="50.0" />
