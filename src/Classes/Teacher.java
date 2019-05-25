@@ -1,6 +1,6 @@
 package Classes;
 
-public class Teacher extends Person{
+public class Teacher extends Person {
     private String Pass; // login password
     private String XP; // experience (dunno why i called it XP)
     private String subjects;

@@ -14,7 +14,10 @@ import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.*;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 
@@ -100,7 +103,7 @@ public class ListController implements Initializable {
                 .and(name_field.textProperty().isEmpty())
                 .and(abs_field.textProperty().isEmpty())
                 .and(mail_field.textProperty().isEmpty()
-                .and(subCol.textProperty().isEmpty()));
+                        .and(subCol.textProperty().isEmpty()));
         addBtn.disableProperty().bind(isData);
 
         list_table.setEditable(true); // enable editing
@@ -153,7 +156,7 @@ public class ListController implements Initializable {
     }
 
     @FXML
-    void deleteRow(){ // delete a student
+    void deleteRow() { // delete a student
         checkConn();
         Student stud = list_table.getSelectionModel().getSelectedItem(); // get selected item
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
@@ -177,12 +180,12 @@ public class ListController implements Initializable {
         }
     }
 
-    private void loadTable(){
+    private void loadTable() {
         list_table.getItems().clear(); // clear table content before adding them again
         try {
             checkConn();
             ResultSet rs = Objects.requireNonNull(conns).createStatement().executeQuery(" select * from '" + logged.getID() + "'"); // sql statement
-            while (rs.next()){
+            while (rs.next()) {
                 // store each row in a student object
                 students.add(new Student(rs.getInt("ID"), rs.getString("name"),
                         rs.getString("gender"), rs.getString("email"),
@@ -195,7 +198,7 @@ public class ListController implements Initializable {
         }
     }
 
-    private void checkConn(){
+    private void checkConn() {
         // if connection is closed get it again
         try {
             if (conns.isClosed()) conns = Connect.getConnect();
@@ -204,8 +207,8 @@ public class ListController implements Initializable {
         }
     }
 
-    public void updateCol(TableColumn.CellEditEvent edditedcell){
-        Student selected =  list_table.getSelectionModel().getSelectedItem(); // get the student being edited right now
+    public void updateCol(TableColumn.CellEditEvent edditedcell) {
+        Student selected = list_table.getSelectionModel().getSelectedItem(); // get the student being edited right now
         String query = "update '" + logged.getID() + "' set " +
                 edditedcell.getTableColumn().getText().toLowerCase().split(" ")[0] + " = ? where id = ?";
         try {
@@ -222,13 +225,13 @@ public class ListController implements Initializable {
     }
 
     @FXML
-    void Filter(){
-        FilteredList<Student> filteredList = new FilteredList<>(students, p-> true);
+    void Filter() {
+        FilteredList<Student> filteredList = new FilteredList<>(students, p -> true);
         searchFiled.textProperty().addListener((observable, oldValue, newValue) -> {
             filteredList.setPredicate(student -> {
                 if (newValue == null || newValue.isEmpty()) return true;
                 String word = newValue.toLowerCase();
-                if (student.getID() != 0){ // to ignore empty fields (otherwise its a NullPointer ma dude)
+                if (student.getID() != 0) { // to ignore empty fields (otherwise its a NullPointer ma dude)
                     if (String.valueOf(student.getID()).toLowerCase().contains(word)) return true;
                 }
                 if (student.getName() != null) { // to ignore empty fields (otherwise its a NullPointer ma dude)
@@ -256,7 +259,7 @@ public class ListController implements Initializable {
         list_table.setItems(students); // surpass the error when the observable list being used is the filtered one
         list_table.getItems().clear(); // clear table content before adding them again
         String selectedItem = subjs.getSelectionModel().getSelectedItem();
-        if (selectedItem.equals("All")){
+        if (selectedItem.equals("All")) {
             delBtn.setDisable(false); // enable delete button
             loadTable(); // load regular view
             return; // terminate the method.

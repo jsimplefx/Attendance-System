@@ -1,11 +1,12 @@
 package Classes;
 
-public class Student extends Person{
+public class Student extends Person {
     private String absences; // number of times student was absent
     private String excuse;
     private String present;
     private String bar_status;
     private String subjects;
+
     // a constructor for the students list page
     public Student(int ID, String name, String gender, String mail, String absences, String bar_status, String subjects) {
         this.name = name;
@@ -18,7 +19,7 @@ public class Student extends Person{
     }
 
     // a constructor with last excuse
-    public Student( int ID, String name, String excuse, String present, String subjects) {
+    public Student(int ID, String name, String excuse, String present, String subjects) {
         this.name = name;
         this.ID = ID;
         this.present = present;

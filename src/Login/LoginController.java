@@ -21,25 +21,30 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+
 public class LoginController implements Initializable {
 
     // create an object of login class
     private LoginModel model = new LoginModel();
 
-    @FXML private JFXTextField id;
+    @FXML
+    private JFXTextField id;
 
-    @FXML private JFXPasswordField pass;
+    @FXML
+    private JFXPasswordField pass;
 
-    @FXML private Label wrongData;
+    @FXML
+    private Label wrongData;
 
     @FXML
     private Button logBtn;
 
 
     // handle login button click event
-    @FXML private void dataCheck(ActionEvent event) throws IOException, SQLException {
+    @FXML
+    private void dataCheck(ActionEvent event) throws IOException, SQLException {
         // validation
-        if (model.isCorrect(id.getText(), pass.getText())){
+        if (model.isCorrect(id.getText(), pass.getText())) {
             // switch to the home scene
             System.out.println("Welcome back fam!!"); // some background action.
             FXMLLoader loader = new FXMLLoader();
@@ -47,7 +52,7 @@ public class LoginController implements Initializable {
             Parent homeParent = loader.load();
             Scene home = new Scene(homeParent);
             //This line gets the Stage information
-            Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
             window.setTitle("Attendance System");
             window.setScene(home);
             window.show();
@@ -84,13 +89,13 @@ public class LoginController implements Initializable {
         passValidate.setMessage("Please enter your password");
         id.focusedProperty().addListener((observableValue, oldValue, newValue) -> {
             wrongData.setVisible(false); // hide the wrong information text when the user focuses on one of the text fields again
-            if (!newValue){
+            if (!newValue) {
                 id.validate();
             }
         });
         pass.focusedProperty().addListener((observableValue, oldValue, newValue) -> {
             wrongData.setVisible(false); // hide the wrong information text when the user focuses on one of the text fields again
-            if (!newValue){
+            if (!newValue) {
                 pass.validate();
             }
         });

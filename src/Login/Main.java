@@ -14,8 +14,13 @@ import java.util.Optional;
 
 public class Main extends Application {
 
+    public static void main(String[] args) {
+        // the most empty function in the whole project
+        launch(args);
+    }
+
     @Override
-    public void start(Stage primaryStage) throws Exception{
+    public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/Login/Login.fxml"));
         primaryStage.setTitle("Login");
         primaryStage.getIcons().add(new Image("resources/window.png")); // set window icon
@@ -32,16 +37,10 @@ public class Main extends Application {
             ButtonType No = new ButtonType("No");
             alert.getButtonTypes().setAll(Yes, No);
             Optional<ButtonType> result = alert.showAndWait();
-            if (result.get() == Yes){
+            if (result.get() == Yes) {
                 // exit the app using platforms preferred way.
                 Platform.exit();
-                System.exit(0);
             }
         });
-    }
-
-    public static void main(String[] args) {
-        // the most empty function in the whole project
-        launch(args);
     }
 }

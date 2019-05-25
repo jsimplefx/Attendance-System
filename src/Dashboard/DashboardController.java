@@ -37,6 +37,7 @@ public class DashboardController implements Initializable {
     // get logged in teacher
     private Teacher logged = LoginModel.getLogged();
     private Connection conn = Connect.getConnect(); // get connection to database
+
     @Override
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -60,7 +61,7 @@ public class DashboardController implements Initializable {
         checkConn(); // check if connection is available or not
         try {
             ResultSet rs = Objects.requireNonNull(conn).createStatement().executeQuery(" select count(*) from '" + logged.getID() + "'"); // sql statement
-                return rs.getInt(1); // get the statement output
+            return rs.getInt(1); // get the statement output
         } catch (SQLException e) {
             e.printStackTrace();
         } finally { // finally block runs regarding if the statement was successful, we already returned something or whatever
@@ -78,7 +79,7 @@ public class DashboardController implements Initializable {
         checkConn(); // check connection
         try {
             ResultSet rs = Objects.requireNonNull(conn).createStatement()
-                            .executeQuery(" select count(*) from '" + logged.getID() + "' where bar = 'barred' "); // sql statement
+                    .executeQuery(" select count(*) from '" + logged.getID() + "' where bar = 'barred' "); // sql statement
             return rs.getInt(1); // get the statement output
         } catch (SQLException e) {
             e.printStackTrace();
@@ -93,7 +94,7 @@ public class DashboardController implements Initializable {
     }
 
     // get number of absent students since last class
-    private int getAbsentStudentsNum(){
+    private int getAbsentStudentsNum() {
         checkConn(); // check connection
         try {
             ResultSet rs = Objects.requireNonNull(conn).createStatement().
@@ -112,12 +113,12 @@ public class DashboardController implements Initializable {
     }
 
     // get number of classes.
-    private int getClassesNum(){
+    private int getClassesNum() {
         String subs; // temp for holding the value from sql
         checkConn();
         try {
             ResultSet rs = Objects.requireNonNull(conn).createStatement().executeQuery(" select * from Teachers where id = " + logged.getID()); // sql statement
-            subs =  rs.getString("subjects");
+            subs = rs.getString("subjects");
             // close query
             rs.close(); // close statement
             conn.close(); // close connection
@@ -129,7 +130,7 @@ public class DashboardController implements Initializable {
         return 0; //return 0 in case the try-catch block failed
     }
 
-    private void checkConn(){
+    private void checkConn() {
         // if connection is closed get it again
         try {
             if (conn.isClosed()) conn = Connect.getConnect();

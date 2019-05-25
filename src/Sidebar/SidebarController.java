@@ -28,6 +28,8 @@ import java.util.ResourceBundle;
 
 public class SidebarController implements Initializable {
 
+    @FXML
+    JFXButton logout;
     /* clicking a section button will just change the center of the pane
      not actually the whole window
       (this allows us to make the sidebar permanent and doesn't move)
@@ -38,23 +40,15 @@ public class SidebarController implements Initializable {
     private Label UserName;
     @FXML
     private HBox dashboard;
-
     @FXML
     private HBox attend;
-
     @FXML
     private HBox list;
-
     @FXML
     private HBox aboutLec;
-
     @FXML
     private HBox about;
-
     private List<HBox> buttons = new ArrayList<>(); // needed for later
-
-    @FXML
-    JFXButton logout;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

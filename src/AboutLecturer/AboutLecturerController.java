@@ -43,7 +43,7 @@ public class AboutLecturerController implements Initializable {
         String[] subj = teacher.getSubjects().split(" ");
         subjects.setText(""); // we set it to an empty string so it wont overlap in the next for loop
         for (int i = 0; i < subj.length; i++) {
-            if (i == subj.length - 1){ // to prevent adding another comma at the end of the last subject
+            if (i == subj.length - 1) { // to prevent adding another comma at the end of the last subject
                 subjects.setText(subjects.getText() + subj[i]);
                 break;
             }

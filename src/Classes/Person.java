@@ -8,7 +8,7 @@ public class Person {
     String email;
     long phone;
 
-     Person() {
+    Person() {
     }
 
     public String getName() {

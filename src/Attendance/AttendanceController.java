@@ -64,15 +64,15 @@ public class AttendanceController implements Initializable {
         present_col.setCellFactory(TextFieldTableCell.forTableColumn()); // enable column editing
     }
 
-    private void loadTable(){
+    private void loadTable() {
         list_table.getItems().clear(); // clear table content before adding them again
         try {
             checkConn(); // check connection
             ResultSet rs = Objects.requireNonNull(conns).createStatement().executeQuery(" select * from '" + logged.getID() + "'"); // sql statement
-            while (rs.next()){
+            while (rs.next()) {
                 // store each row in a student object
                 students.add(new Student(rs.getInt("ID"), rs.getString("name"),
-                            rs.getString("excuse"), rs.getString("present"), rs.getString("subjects")));
+                        rs.getString("excuse"), rs.getString("present"), rs.getString("subjects")));
             }
             rs.close(); // close statement
             conns.close(); // close connection for now
@@ -82,10 +82,10 @@ public class AttendanceController implements Initializable {
     }
 
     // this method can edit any selected row (if you have enabled editing for it)
-    public void takeAtten(TableColumn.CellEditEvent edditedcell){
-        Student selected =  list_table.getSelectionModel().getSelectedItem(); // get the student being edited right now
+    public void takeAtten(TableColumn.CellEditEvent edditedcell) {
+        Student selected = list_table.getSelectionModel().getSelectedItem(); // get the student being edited right now
 
-        String query = "update '" + logged.getID() + "' set " +  edditedcell.getTableColumn().getText().toLowerCase() + " = ? where id = ?"; // sql query
+        String query = "update '" + logged.getID() + "' set " + edditedcell.getTableColumn().getText().toLowerCase() + " = ? where id = ?"; // sql query
         try {
             checkConn(); // check connection
             PreparedStatement pst = Objects.requireNonNull(conns).prepareStatement(query);
@@ -99,7 +99,8 @@ public class AttendanceController implements Initializable {
         }
 
     }
-    private void checkConn(){
+
+    private void checkConn() {
         // if connection is closed get it again
         try {
             if (conns.isClosed()) conns = Connect.getConnect();

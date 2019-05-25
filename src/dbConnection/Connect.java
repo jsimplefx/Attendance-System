@@ -1,10 +1,12 @@
 package dbConnection;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
 
 public class Connect {
-    public static Connection getConnect()   {
+    public static Connection getConnect() {
         try {
             Class.forName("org.sqlite.JDBC");
             /*
@@ -14,7 +16,7 @@ public class Connect {
             */
             String UrlInit = "jdbc:sqlite:"; // constant, the rest is the file directory which will be changed on each extract
             String dbUrl = "Database/PersonDB.db";
-            return DriverManager.getConnection( UrlInit + dbUrl);
+            return DriverManager.getConnection(UrlInit + dbUrl);
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
             return null;
