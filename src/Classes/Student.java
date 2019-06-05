@@ -10,7 +10,8 @@ public class Student extends Person {
     private String subjects;
 
     // a constructor for the students list page
-    public Student(int ID, String name, String gender, String mail, String absences, String bar_status, String subjects) {
+    public Student(int ID, String name, String gender, String mail, String absences, String bar_status,
+                   String subjects, Boolean present, String excuse) {
         this.name = name;
         this.ID = ID;
         this.gender = gender;
@@ -18,15 +19,8 @@ public class Student extends Person {
         this.absences = absences;
         this.bar_status = bar_status;
         this.subjects = subjects;
-    }
-
-    // a constructor with last excuse
-    public Student(int ID, String name, String excuse, Boolean present, String subjects) {
-        this.name = name;
-        this.ID = ID;
         this.present.setSelected(present);
         this.excuse = excuse;
-        this.subjects = subjects;
     }
 
     public String getAbsences() {

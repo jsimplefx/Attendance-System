@@ -10,8 +10,6 @@ import dbConnection.Connect;
 import javafx.beans.binding.BooleanBinding;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.collections.transformation.FilteredList;
-import javafx.collections.transformation.SortedList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -24,11 +22,12 @@ import javafx.scene.control.cell.TextFieldTableCell;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.ResourceBundle;
+
+import static dbConnection.Operations.*;
 
 public class ListController implements Initializable {
 
@@ -91,7 +90,7 @@ public class ListController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        loadTable(); // load table on class start
+        LoadData(list_table, students); // load table on class start
         // define what each column is going to hold (based on student class)
         id_col.setCellValueFactory(new PropertyValueFactory<>("ID"));
         name_col.setCellValueFactory(new PropertyValueFactory<>("name"));
@@ -121,6 +120,7 @@ public class ListController implements Initializable {
         for (String sub : subs) {
             subjs.getItems().add(sub);
         }
+        subjs.getSelectionModel().selectFirst();
     }
 
     @FXML
@@ -140,7 +140,7 @@ public class ListController implements Initializable {
             pst.execute();
             pst.close(); // close statement
             conns.close(); // close connection
-            loadTable(); // reload table after adding new student
+            LoadData(list_table, students); // reload table after adding new student
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -177,38 +177,10 @@ public class ListController implements Initializable {
                 pst.execute();
                 conns.close(); // close connection for now
                 if (!subjs.getSelectionModel().getSelectedItem().equals("All")) setClass(); // just reload that view
-                else loadTable(); // reload tables after deleting row
+                else LoadData(list_table, students); // reload tables after deleting row
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-        }
-    }
-
-    private void loadTable() {
-        list_table.getItems().clear(); // clear table content before adding them again
-        try {
-            checkConn();
-            ResultSet rs = Objects.requireNonNull(conns).createStatement()
-                    .executeQuery(" select * from '" + logged.getID() + "'"); // sql statement
-            while (rs.next()) {
-                // store each row in a student object
-                students.add(new Student(rs.getInt("ID"), rs.getString("name"),
-                        rs.getString("gender"), rs.getString("email"),
-                        rs.getString("absences"), rs.getString("bar"), rs.getString("subjects")));
-            }
-            rs.close(); // close query
-            conns.close(); // close connection for now
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private void checkConn() {
-        // if connection is closed get it again
-        try {
-            if (conns.isClosed()) conns = Connect.getConnect();
-        } catch (SQLException e) {
-            e.printStackTrace();
         }
     }
 
@@ -231,52 +203,25 @@ public class ListController implements Initializable {
 
     @FXML
     void Filter() {
-        FilteredList<Student> filteredList = new FilteredList<>(students, p -> true);
-        searchFiled.textProperty().addListener((observable, oldValue, newValue) -> {
-            filteredList.setPredicate(student -> {
-                if (newValue == null || newValue.isEmpty()) return true;
-                String word = newValue.toLowerCase();
-                if (student.getID() != 0) { // to ignore empty fields (otherwise its a NullPointer ma dude)
-                    if (String.valueOf(student.getID()).toLowerCase().contains(word)) return true;
-                }
-                if (student.getName() != null) { // to ignore empty fields (otherwise its a NullPointer ma dude)
-                    if (student.getName().toLowerCase().contains(word)) return true;
-                }
-                if (student.getAbsences() != null) { // to ignore empty fields (otherwise its a NullPointer ma dude)
-                    if (student.getAbsences().toLowerCase().contains(word)) return true;
-                }
-                if (student.getBar_status() != null) { // to ignore empty fields (otherwise its a NullPointer ma dude)
-                    if (student.getBar_status().toLowerCase().contains(word)) return true;
-                }
-                if (student.getEmail() != null) { // to ignore empty fields (otherwise its a NullPointer ma dude)
-                    return student.getEmail().toLowerCase().contains(word);
-                }
-                return false;
-            });
-            SortedList<Student> sortedList = new SortedList<>(filteredList);
-            sortedList.comparatorProperty().bind(list_table.comparatorProperty());
-            list_table.setItems(sortedList);
-        });
+        FilterData(searchFiled, students, list_table);
     }
 
     @FXML
     void setClass() throws SQLException {
-        list_table.setItems(students); // surpass the error when the observable list being used is the filtered one
-        list_table.getItems().clear(); // clear table content before adding them again
-        String selectedItem = subjs.getSelectionModel().getSelectedItem();
-        if (selectedItem.equals("All")) {
+        if (subjs.getSelectionModel().getSelectedItem().equals("All")) {
             delBtn.setDisable(false); // enable delete button
-            loadTable(); // load regular view
+            LoadData(list_table, students); // load regular view
             return; // terminate the method.
         }
-        checkConn(); // check connection
-        String st = "select * from '" + logged.getID() + "' where subjects like " + "'%" + selectedItem + "%'";
-        ResultSet rs = Objects.requireNonNull(conns).createStatement().executeQuery(st);
-        while (rs.next()) {
-            // store each row in a student object
-            students.add(new Student(rs.getInt("ID"), rs.getString("name"),
-                    rs.getString("gender"), rs.getString("email"), rs.getString("absences"),
-                    rs.getString("bar"), rs.getString("subjects")));
+        FilterClass(list_table, students, subjs);
+    }
+
+    private void checkConn() {
+        // if connection is closed get it again
+        try {
+            if (conns.isClosed()) conns = Connect.getConnect();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 }

@@ -3,6 +3,8 @@ package Attendance;
 import Classes.Student;
 import Classes.Teacher;
 import Login.LoginModel;
+import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXTextField;
 import dbConnection.Connect;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -16,10 +18,11 @@ import javafx.scene.control.cell.TextFieldTableCell;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Objects;
 import java.util.ResourceBundle;
+
+import static dbConnection.Operations.*;
 
 public class AttendanceController implements Initializable {
 
@@ -38,6 +41,12 @@ public class AttendanceController implements Initializable {
     @FXML
     private TableColumn<Student, String> excuse_col;
 
+    @FXML
+    private JFXComboBox<String> subjs;
+
+    @FXML
+    private JFXTextField searchFiled;
+
     // get logged in teacher
     private Teacher logged = LoginModel.getLogged();
 
@@ -50,7 +59,7 @@ public class AttendanceController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        loadTable(); // load table on class start
+        LoadData(list_table, students); // load table on class start
         // define what each column is going to hold (based on student class)
         id_col.setCellValueFactory(new PropertyValueFactory<>("ID"));
         name_col.setCellValueFactory(new PropertyValueFactory<>("name"));
@@ -65,6 +74,13 @@ public class AttendanceController implements Initializable {
         for (Student stud : students) {
             stud.getPresent().setOnAction(e -> updateAtten(stud));
         }
+
+        subjs.getItems().add("All");
+        String[] subs = logged.getSubjects().split(" ");
+        for (String sub : subs) {
+            subjs.getItems().add(sub);
+        }
+        subjs.getSelectionModel().selectFirst();
     }
 
     private void updateAtten(Student stud) {
@@ -84,24 +100,6 @@ public class AttendanceController implements Initializable {
         }
     }
 
-    private void loadTable() {
-        list_table.getItems().clear(); // clear table content before adding them again
-        try {
-            checkConn(); // check connection
-            ResultSet rs = Objects.requireNonNull(conns).createStatement()
-                    .executeQuery(" select * from '" + logged.getID() + "'"); // sql statement
-            while (rs.next()) {
-                // store each row in a student object
-                students.add(new Student(rs.getInt("ID"), rs.getString("name"),
-                        rs.getString("excuse"), rs.getBoolean("present"), rs.getString("subjects")));
-            }
-            rs.close(); // close statement
-            conns.close(); // close connection for now
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
     // this method can edit any selected row (if you have enabled editing for it)
     public void takeAtten(TableColumn.CellEditEvent edditedcell) {
         Student selected = list_table.getSelectionModel().getSelectedItem(); // get the student being edited right now
@@ -115,11 +113,25 @@ public class AttendanceController implements Initializable {
             pst.execute(); // execute query
             pst.close();
             conns.close(); // close connection for now
-            loadTable(); // reload tables after updating field
+            LoadData(list_table, students); // reload tables after updating field
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
+    }
+
+    @FXML
+    void Filter() {
+        FilterData(searchFiled, students, list_table);
+    }
+
+    @FXML
+    void setClass() throws SQLException {
+        if (subjs.getSelectionModel().getSelectedItem().equals("All")) {
+            LoadData(list_table, students); // load regular view
+            return; // terminate the method.
+        }
+        FilterClass(list_table, students, subjs);
     }
 
     private void checkConn() {

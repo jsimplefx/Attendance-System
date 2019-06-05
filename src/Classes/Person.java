@@ -1,6 +1,6 @@
 package Classes;
 
-// i dot think this needs any comments
+// i dont think this needs any comments
 public class Person {
     String name;
     int ID;
