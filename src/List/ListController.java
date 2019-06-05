@@ -22,7 +22,10 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 
 import java.net.URL;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.ResourceBundle;
@@ -173,7 +176,8 @@ public class ListController implements Initializable {
                 PreparedStatement pst = Objects.requireNonNull(conns).prepareStatement(query);
                 pst.execute();
                 conns.close(); // close connection for now
-                loadTable(); // reload tables after deleting row
+                if (!subjs.getSelectionModel().getSelectedItem().equals("All")) setClass(); // just reload that view
+                else loadTable(); // reload tables after deleting row
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -264,41 +268,15 @@ public class ListController implements Initializable {
             delBtn.setDisable(false); // enable delete button
             loadTable(); // load regular view
             return; // terminate the method.
-        } else {
-            delBtn.setDisable(true); // disable delete button (deleting from all will delete from here too)
         }
         checkConn(); // check connection
-        DatabaseMetaData dbm = conns.getMetaData(); // get database metadata (tables, views, triggers etc)
-        ResultSet tables = dbm.getTables(null, null, selectedItem, null); // check if that table exists
-        if (tables.next()) { // if the table exists
-            tables.close(); // here is a little lesson in trickery (i dare you to delet this)
-            // delete the table
-            PreparedStatement del = Objects.requireNonNull(conns).prepareStatement("drop table '" + selectedItem + "'"); // sql statement
-            del.execute(); // update the subject table from main students table before displaying it
-            del.close(); // close update statement
-            conns.close();
-            createTable(); // create table from scratch with newer values(better than doing insert and update)
-        } else {
-            // create table again
-            createTable();
-        }
-    }
-
-    private void createTable() throws SQLException {
-        checkConn();
-        String selectedItem = subjs.getSelectionModel().getSelectedItem();
-        PreparedStatement pst = Objects.requireNonNull(conns).prepareStatement("create table '" + selectedItem + "' " +
-                "as select * from '" + logged.getID() + "' where subjects like '%" + selectedItem + "%'"); // sql statement
-        pst.execute(); // execute statement
-        pst.close(); // close statement
-        ResultSet rs = Objects.requireNonNull(conns).createStatement().executeQuery(" select * from '" + selectedItem + "'"); // sql statement
+        String st = "select * from '" + logged.getID() + "' where subjects like " + "'%" + selectedItem + "%'";
+        ResultSet rs = Objects.requireNonNull(conns).createStatement().executeQuery(st);
         while (rs.next()) {
             // store each row in a student object
             students.add(new Student(rs.getInt("ID"), rs.getString("name"),
                     rs.getString("gender"), rs.getString("email"), rs.getString("absences"),
                     rs.getString("bar"), rs.getString("subjects")));
         }
-        rs.close(); // close query.
-        conns.close(); // close connection.
     }
 }
