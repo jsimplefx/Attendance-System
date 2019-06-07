@@ -41,6 +41,7 @@ public class LoginModel {
         set = statement.executeQuery();
         if (set.next()) { // only store the logged in user if its correct
             setLogged(set);
+            statement.close(); // this line literally fixed all my database issues
             return true;
         } else return false;
     }

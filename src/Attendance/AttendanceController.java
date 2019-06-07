@@ -33,7 +33,7 @@ public class AttendanceController implements Initializable {
     private TableColumn<Student, String> name_col;
 
     @FXML
-    private TableColumn<Student, String> present_col;
+    private TableColumn<Student, Boolean> present_col;
 
     @FXML
     private TableColumn<Student, String> excuse_col;
@@ -58,12 +58,30 @@ public class AttendanceController implements Initializable {
         excuse_col.setCellValueFactory(new PropertyValueFactory<>("excuse"));
 
         list_table.setItems(students); // set table items as the Students observable list
-
         list_table.setEditable(true); // enable table editing
         excuse_col.setCellFactory(TextFieldTableCell.forTableColumn()); // enable column editing
-        present_col.setCellFactory(TextFieldTableCell.forTableColumn()); // enable column editing
-
         list_table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY); // resize column based on whole table(window) size
+
+        for (Student stud : students) {
+            stud.getPresent().setOnAction(e -> updateAtten(stud));
+        }
+    }
+
+    private void updateAtten(Student stud) {
+        String query = "update '" + logged.getID() + "' set present = ? where id = ?"; // sql query
+        try {
+            checkConn(); // check connection
+            PreparedStatement psts = conns.prepareStatement(query);
+            psts.setBoolean(1, stud.getPresent().isSelected());
+            psts.setString(2, String.valueOf(stud.getID())); // pass the id of the column that has to be edited
+            conns.isClosed();
+            psts.execute(); // execute query
+            psts.close();
+            conns.close(); // close connection for now
+            System.out.println("we over!!");
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
     }
 
     private void loadTable() {
@@ -75,7 +93,7 @@ public class AttendanceController implements Initializable {
             while (rs.next()) {
                 // store each row in a student object
                 students.add(new Student(rs.getInt("ID"), rs.getString("name"),
-                        rs.getString("excuse"), rs.getString("present"), rs.getString("subjects")));
+                        rs.getString("excuse"), rs.getBoolean("present"), rs.getString("subjects")));
             }
             rs.close(); // close statement
             conns.close(); // close connection for now
@@ -87,7 +105,6 @@ public class AttendanceController implements Initializable {
     // this method can edit any selected row (if you have enabled editing for it)
     public void takeAtten(TableColumn.CellEditEvent edditedcell) {
         Student selected = list_table.getSelectionModel().getSelectedItem(); // get the student being edited right now
-
         String query = "update '" + logged.getID() + "' set " + edditedcell.getTableColumn().getText().toLowerCase()
                 + " = ? where id = ?"; // sql query
         try {
@@ -96,6 +113,7 @@ public class AttendanceController implements Initializable {
             pst.setString(1, edditedcell.getNewValue().toString()); // pass the inputted value to be updated in that row
             pst.setString(2, String.valueOf(selected.getID())); // pass the id of the column that has to be edited
             pst.execute(); // execute query
+            pst.close();
             conns.close(); // close connection for now
             loadTable(); // reload tables after updating field
         } catch (SQLException e) {

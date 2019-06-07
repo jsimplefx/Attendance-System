@@ -126,8 +126,9 @@
     </column>
     <column id="37" parent="8" name="present">
       <Position>5</Position>
-      <DataType>NUMERIC|0s</DataType>
-      <DefaultExpression>False</DefaultExpression>
+      <DataType>Boolean|0s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>false</DefaultExpression>
     </column>
     <column id="38" parent="8" name="absences">
       <Position>6</Position>

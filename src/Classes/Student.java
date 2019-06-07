@@ -1,9 +1,11 @@
 package Classes;
 
+import javafx.scene.control.CheckBox;
+
 public class Student extends Person {
     private String absences; // number of times student was absent
     private String excuse;
-    private String present;
+    private CheckBox present = new CheckBox();
     private String bar_status;
     private String subjects;
 
@@ -19,10 +21,10 @@ public class Student extends Person {
     }
 
     // a constructor with last excuse
-    public Student(int ID, String name, String excuse, String present, String subjects) {
+    public Student(int ID, String name, String excuse, Boolean present, String subjects) {
         this.name = name;
         this.ID = ID;
-        this.present = present;
+        this.present.setSelected(present);
         this.excuse = excuse;
         this.subjects = subjects;
     }
@@ -43,12 +45,9 @@ public class Student extends Person {
         this.excuse = excuse;
     }
 
-    public String getPresent() {
-        return present;
-    }
+    public CheckBox getPresent() { return present; }
 
-    public void setPresent(String present) {
-        this.present = present;
+    public void setPresent(Boolean present) { this.present.setSelected(present);
     }
 
     public String getBar_status() {

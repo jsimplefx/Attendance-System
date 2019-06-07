@@ -59,13 +59,16 @@ public class DashboardController implements Initializable {
     // get total number of students
     private int getStudentsNum() {
         checkConn(); // check if connection is available or not
+        ResultSet rs = null;
         try {
-            ResultSet rs = Objects.requireNonNull(conn).createStatement().executeQuery(" select count(*) from '" + logged.getID() + "'"); // sql statement
+            rs = Objects.requireNonNull(conn).createStatement()
+                    .executeQuery(" select count(*) from '" + logged.getID() + "'"); // sql statement
             return rs.getInt(1); // get the statement output
         } catch (SQLException e) {
             e.printStackTrace();
         } finally { // finally block runs regarding if the statement was successful, we already returned something or whatever
             try {
+                Objects.requireNonNull(rs).close();
                 conn.close(); // make sure we close the connection
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -77,14 +80,16 @@ public class DashboardController implements Initializable {
     // get number of barred students
     private int getBarredStudentsNum() {
         checkConn(); // check connection
+        ResultSet rs = null;
         try {
-            ResultSet rs = Objects.requireNonNull(conn).createStatement()
+            rs = Objects.requireNonNull(conn).createStatement()
                     .executeQuery(" select count(*) from '" + logged.getID() + "' where bar = 'barred' "); // sql statement
             return rs.getInt(1); // get the statement output
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
             try {
+                Objects.requireNonNull(rs).close();
                 conn.close(); // make sure we close the connection
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -96,14 +101,16 @@ public class DashboardController implements Initializable {
     // get number of absent students since last class
     private int getAbsentStudentsNum() {
         checkConn(); // check connection
+        ResultSet rs = null;
         try {
-            ResultSet rs = Objects.requireNonNull(conn).createStatement().
+            rs = Objects.requireNonNull(conn).createStatement().
                     executeQuery(" select count(*) from '" + logged.getID() + "' where present = 0"); // sql statement
             return rs.getInt(1); // get the statement output
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
             try {
+                Objects.requireNonNull(rs).close();
                 conn.close(); // make sure we close the connection
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -117,7 +124,8 @@ public class DashboardController implements Initializable {
         String subs; // temp for holding the value from sql
         checkConn();
         try {
-            ResultSet rs = Objects.requireNonNull(conn).createStatement().executeQuery(" select * from Teachers where id = " + logged.getID()); // sql statement
+            ResultSet rs = Objects.requireNonNull(conn).createStatement()
+                    .executeQuery(" select * from Teachers where id = " + logged.getID()); // sql statement
             subs = rs.getString("subjects");
             // close query
             rs.close(); // close statement
