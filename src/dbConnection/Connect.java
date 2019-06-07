@@ -3,7 +3,6 @@ package dbConnection;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.Objects;
 
 
 public class Connect {
@@ -20,20 +19,9 @@ public class Connect {
             return DriverManager.getConnection(UrlInit + dbUrl);
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
-            return null;
-        }
-    }
-
-    public static Connection checkConn() {
-        Connection con = getConnect();
-        // if connection is closed get it again
-        try {
-            if (Objects.requireNonNull(con).isClosed()) con = Connect.getConnect();
-            return con;
-        } catch (SQLException e) {
-            e.printStackTrace();
         }
         return null;
     }
+
 }
 
