@@ -9,6 +9,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 import java.net.URL;
+import java.util.Map;
 import java.util.ResourceBundle;
 
 public class AboutLecturerController implements Initializable {
@@ -45,14 +46,10 @@ public class AboutLecturerController implements Initializable {
         ID.setText(Integer.toString(teacher.getID()));
         email.setText(teacher.getEmail());
         gender.setText(teacher.getGender());
-        String[] subj = teacher.getSubjects().split(" ");
-        subjects.setText(""); // we set it to an empty string so it wont overlap in the next for loop
-        for (int i = 0; i < subj.length; i++) {
-            if (i == subj.length - 1) { // to prevent adding another comma at the end of the last subject
-                subjects.setText(subjects.getText() + subj[i]);
-                break;
-            }
-            subjects.setText(subjects.getText() + subj[i] + ", ");
+        subjects.setText("");
+        Map<String,  String[]> subj = teacher.getSubjects();
+        for (String name: subj.keySet()){
+            subjects.setText(subjects.getText() + name + ", ");
         }
         exp.setText(teacher.getXP());
         number.setText(String.valueOf(teacher.getPhone()));
