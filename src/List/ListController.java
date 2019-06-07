@@ -10,6 +10,7 @@ import dbConnection.Connect;
 import javafx.beans.binding.BooleanBinding;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -23,9 +24,7 @@ import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.ResourceBundle;
+import java.util.*;
 
 import static dbConnection.Operations.*;
 
@@ -76,6 +75,10 @@ public class ListController implements Initializable {
     @FXML
     private JFXComboBox<String> subjs;
 
+
+    @FXML
+    private JFXComboBox<String> section;
+
     @FXML
     private JFXTextField searchFiled;
 
@@ -98,6 +101,7 @@ public class ListController implements Initializable {
         past_col.setCellValueFactory(new PropertyValueFactory<>("absences"));
         bar_col.setCellValueFactory(new PropertyValueFactory<>("bar_status"));
 
+
         list_table.setItems(students); // add students observable list to table
 
         // disable add button unless all fields are filled (binding)
@@ -116,9 +120,9 @@ public class ListController implements Initializable {
         list_table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
         //initialize the drop down menu
         subjs.getItems().add("All");
-        String[] subs = logged.getSubjects().split(" ");
-        for (String sub : subs) {
-            subjs.getItems().add(sub);
+        Map<String, String[]> subs = logged.getSubjects();
+        for (String name: subs.keySet()){
+            subjs.getItems().add(name);
         }
         subjs.getSelectionModel().selectFirst();
     }
@@ -136,7 +140,7 @@ public class ListController implements Initializable {
             pst.setString(3, mail_field.getText());
             pst.setString(4, abs_field.getText());
             pst.setString(5, bar_field.getText());
-            pst.setString(6, subCol.getText());
+            pst.setString(6, "'(" + subCol.getText() + ")");
             pst.execute();
             pst.close(); // close statement
             conns.close(); // close connection
@@ -176,7 +180,7 @@ public class ListController implements Initializable {
                 PreparedStatement pst = Objects.requireNonNull(conns).prepareStatement(query);
                 pst.execute();
                 conns.close(); // close connection for now
-                if (!subjs.getSelectionModel().getSelectedItem().equals("All")) setClass(); // just reload that view
+                if (!subjs.getSelectionModel().getSelectedItem().equals("All")) LoadData(list_table, students); // just reload that view
                 else LoadData(list_table, students); // reload tables after deleting row
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -207,13 +211,8 @@ public class ListController implements Initializable {
     }
 
     @FXML
-    void setClass() throws SQLException {
-        if (subjs.getSelectionModel().getSelectedItem().equals("All")) {
-            delBtn.setDisable(false); // enable delete button
-            LoadData(list_table, students); // load regular view
-            return; // terminate the method.
-        }
-        FilterClass(list_table, students, subjs);
+    void setClass(ActionEvent event) throws SQLException {
+        DropFilter((JFXComboBox) event.getSource(), section, subjs, list_table, students, logged);
     }
 
     private void checkConn() {

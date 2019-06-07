@@ -20,7 +20,8 @@
                         <Font name="SF Compact Display Regular" size="16.0" />
                     </font>
                 </JFXTextField>
-                <JFXComboBox fx:id="subjs" maxHeight="1.7976931348623157E308" maxWidth="200.0" onAction="#setClass" promptText="All" HBox.hgrow="ALWAYS" />
+                <JFXComboBox fx:id="subjs" maxHeight="1.7976931348623157E308" maxWidth="200.0" onAction="#setClass" promptText="Subject" HBox.hgrow="ALWAYS" />
+            <JFXComboBox fx:id="section" disable="true" layoutX="915.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="200.0" minWidth="200.0" onAction="#setClass" promptText="Section" />
             </children>
         </HBox>
         <TableView fx:id="list_table" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" stylesheets="@../StyleCheet/style.css" VBox.vgrow="ALWAYS">
@@ -36,9 +37,9 @@
             <children>
                 <JFXTextField fx:id="id_field" promptText="ID" HBox.hgrow="ALWAYS" />
                 <JFXTextField fx:id="name_field" labelFloat="true" promptText="Name" HBox.hgrow="ALWAYS" />
-                <JFXTextField fx:id="abs_field" labelFloat="true" promptText="Absenses" HBox.hgrow="ALWAYS" />
+                <JFXTextField fx:id="abs_field" labelFloat="true" promptText="Absences" HBox.hgrow="ALWAYS" />
                 <JFXTextField fx:id="bar_field" labelFloat="true" promptText="Bar Status" HBox.hgrow="ALWAYS" />
-                <JFXTextField fx:id="subCol" labelFloat="true" promptText="Subject(s)" HBox.hgrow="ALWAYS" />
+                <JFXTextField fx:id="subCol" labelFloat="true" promptText="Subject(s),section" HBox.hgrow="ALWAYS" />
                 <JFXTextField fx:id="mail_field" labelFloat="true" promptText="Email" HBox.hgrow="ALWAYS" />
                 <JFXButton fx:id="addBtn" onAction="#addRow" ripplerFill="TRANSPARENT" style="-fx-background-color: #2980b9;" text="Add" textFill="WHITE">
                     <font>
