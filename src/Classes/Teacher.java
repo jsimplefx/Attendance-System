@@ -1,14 +1,12 @@
 package Classes;
 
+import java.util.Map;
+
 public class Teacher extends Person {
     private String Pass; // login password
     private String XP; // experience (dunno why i called it XP)
-    private String subjects;
 
-    public Teacher() {
-    }
-
-    public Teacher(String name, String pass, int ID, String gender, String email, String subjects, String XP, long phone) {
+    public Teacher(String name, String pass, int ID, String gender, String email, Map<String, String[]> subjects, String XP, long phone) {
         this.name = name;
         Pass = pass;
         this.ID = ID;
@@ -23,7 +21,4 @@ public class Teacher extends Person {
         return XP;
     }
 
-    public String getSubjects() {
-        return subjects;
-    }
 }

@@ -1,5 +1,8 @@
 package Classes;
 
+import java.util.HashMap;
+import java.util.Map;
+
 // i dont think this needs any comments
 public class Person {
     String name;
@@ -7,6 +10,7 @@ public class Person {
     String gender;
     String email;
     long phone;
+    Map<String, String[]> subjects = new HashMap<>();
 
     Person() {
     }
@@ -49,5 +53,9 @@ public class Person {
 
     public void setPhone(long phone) {
         this.phone = phone;
+    }
+
+    public Map<String, String[]> getSubjects() {
+        return subjects;
     }
 }

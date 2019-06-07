@@ -2,16 +2,17 @@ package Classes;
 
 import javafx.scene.control.CheckBox;
 
+import java.util.Map;
+
 public class Student extends Person {
     private String absences; // number of times student was absent
     private String excuse;
     private CheckBox present = new CheckBox();
     private String bar_status;
-    private String subjects;
 
     // a constructor for the students list page
     public Student(int ID, String name, String gender, String mail, String absences, String bar_status,
-                   String subjects, Boolean present, String excuse) {
+                   Map<String, String[]> subjects, Boolean present, String excuse) {
         this.name = name;
         this.ID = ID;
         this.gender = gender;
@@ -55,11 +56,8 @@ public class Student extends Person {
         this.bar_status = bar_status;
     }
 
-    public String getSubjects() {
+    @Override
+    public Map<String, String[]> getSubjects() {
         return subjects;
-    }
-
-    public void setSubjects(String subjects) {
-        this.subjects = subjects;
     }
 }
