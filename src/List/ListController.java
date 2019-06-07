@@ -245,7 +245,7 @@ public class ListController implements Initializable {
                     if (student.getBar_status().toLowerCase().contains(word)) return true;
                 }
                 if (student.getEmail() != null) { // to ignore empty fields (otherwise its a NullPointer ma dude)
-                    if (student.getEmail().toLowerCase().contains(word)) return true;
+                    return student.getEmail().toLowerCase().contains(word);
                 }
                 return false;
             });

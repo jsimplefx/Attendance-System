@@ -45,9 +45,12 @@ public class Student extends Person {
         this.excuse = excuse;
     }
 
-    public CheckBox getPresent() { return present; }
+    public CheckBox getPresent() {
+        return present;
+    }
 
-    public void setPresent(Boolean present) { this.present.setSelected(present);
+    public void setPresent(Boolean present) {
+        this.present.setSelected(present);
     }
 
     public String getBar_status() {

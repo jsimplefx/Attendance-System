@@ -1,19 +1,21 @@
 /*top corners curve for the dashboard*/
-.top_stats{
+.top_stats {
 
-  -fx-border-radius: 10 10 0 0;
-  -fx-background-radius: 10 10 0 0;
+    -fx-border-radius: 10 10 0 0;
+    -fx-background-radius: 10 10 0 0;
 
-  /* top-left, top-right, bottom-right, and bottom-left corners, in that order. */
+    /* top-left, top-right, bottom-right, and bottom-left corners, in that order. */
 }
+
 /*bottom corners curve for the dashboard*/
-.bottom_stats{
+.bottom_stats {
 
-  -fx-border-radius: 0 0 10 10;
-  -fx-background-radius: 0 0 10 10;
+    -fx-border-radius: 0 0 10 10;
+    -fx-background-radius: 0 0 10 10;
 
-  /* top-left, top-right, bottom-right, and bottom-left corners, in that order. */
+    /* top-left, top-right, bottom-right, and bottom-left corners, in that order. */
 }
+
 .label-header {
     -fx-font-family: "SF Compact Display";
     -fx-text-fill: white;
@@ -38,11 +40,7 @@
     -fx-size: 35px;
     -fx-border-width: 0 0 1 0;
     -fx-background-color: transparent;
-    -fx-border-color:
-        transparent
-        transparent
-        derive(-fx-base, 80%)
-        transparent;
+    -fx-border-color: transparent transparent derive(-fx-base, 80%) transparent;
     -fx-border-insets: 0 10 1 0;
 }
 
@@ -60,10 +58,10 @@
     -fx-alignment: center;
 }
 
-.sidebar-button{
+.sidebar-button {
     -fx-background-color: #303952;
 }
 
-.sidebar-button:hover{
+.sidebar-button:hover {
     -fx-background-color: #2980B9;
 }
