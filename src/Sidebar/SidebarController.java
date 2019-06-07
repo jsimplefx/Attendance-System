@@ -47,6 +47,9 @@ public class SidebarController implements Initializable {
     private HBox aboutLec;
     @FXML
     private HBox about;
+    @FXML
+    private HBox settings;
+
     private List<HBox> buttons = new ArrayList<>(); // needed for later
 
     @Override
@@ -56,6 +59,8 @@ public class SidebarController implements Initializable {
         buttons.add(list);
         buttons.add(aboutLec);
         buttons.add(about);
+        buttons.add(settings);
+
         Teacher teacher = LoginModel.getLogged(); // get logged in teacher from login model class
         logout.setFocusTraversable(false);
         dashboard.setStyle("-fx-background-color: #2980B9");
@@ -99,6 +104,8 @@ public class SidebarController implements Initializable {
             loadPane("/AboutLecturer/AboutLecturer");
         } else if (source == about) {
             loadPane("/AboutApp/AboutApp");
+        } else if(source == settings){
+            loadPane("/Settings/Settings");
         }
     }
 
