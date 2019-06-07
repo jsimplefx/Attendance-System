@@ -10,9 +10,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Settings/Settings.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Settings/Settings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3f3abf20-74da-4637-9f0e-7a7df63aff81.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3f3abf20-74da-4637-9f0e-7a7df63aff81.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/blacksuan19.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/blacksuan19.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Database/PersonDB.db" beforeDir="false" afterPath="$PROJECT_DIR$/Database/PersonDB.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AboutLecturer/AboutLecturerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AboutLecturer/AboutLecturerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Attendance/Attendance.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Attendance/Attendance.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Attendance/AttendanceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Attendance/AttendanceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Classes/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Classes/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Classes/Teacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/Teacher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Dashboard/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dashboard/DashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/List/List.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/List/List.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/List/ListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/List/ListController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Login/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Login/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Login/LoginModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Login/LoginModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sidebar/Sidebar.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sidebar/Sidebar.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sidebar/SidebarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sidebar/SidebarController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dbConnection/Connect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbConnection/Connect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dbConnection/Operations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbConnection/Operations.java" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -66,7 +84,7 @@
         <item name="PersonDB" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
-        <item name="1625897: table" type="3d80ac25:SqliteImplModel$Table" />
+        <item name="Settings: table" type="3d80ac25:SqliteImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -120,42 +138,79 @@
     <favorites_list name="JavaFxApplication" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Attendance/AttendanceController.java">
+        <entry file="file://$PROJECT_DIR$/src/List/ListController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="122">
-              <caret line="106" column="13" selection-start-line="106" selection-start-column="13" selection-end-line="106" selection-end-column="13" />
+            <state relative-caret-position="133">
+              <caret line="183" column="21" selection-start-line="183" selection-start-column="21" selection-end-line="183" selection-end-column="21" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Classes/Student.java">
+        <entry file="file://$PROJECT_DIR$/src/Attendance/AttendanceController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+            <state relative-caret-position="253">
+              <caret line="148" column="9" selection-start-line="148" selection-start-column="9" selection-end-line="148" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Login/LoginModel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-104">
+              <caret line="26" column="88" selection-start-line="26" selection-start-column="88" selection-end-line="26" selection-end-column="88" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Login/LoginController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="148">
+              <caret line="49" column="33" lean-forward="true" selection-start-line="49" selection-start-column="33" selection-end-line="49" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Classes/Person.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="421">
+              <caret line="57" column="4" lean-forward="true" selection-start-line="57" selection-start-column="4" selection-end-line="59" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/List/List.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="174">
+              <caret line="32" column="36" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dbConnection/Operations.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="90" column="32" selection-start-line="90" selection-start-column="32" selection-end-line="90" selection-end-column="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/List/ListController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="122" column="48" selection-start-line="122" selection-start-column="48" selection-end-line="122" selection-end-column="48" />
+            <state relative-caret-position="21">
+              <caret line="133" selection-start-line="133" selection-end-line="133" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -164,10 +219,28 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dbConnection/Connect.java">
+        <entry file="das://3f3abf20-74da-4637-9f0e-7a7df63aff81/schema/main/table/Settings">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state projectRestartId="dc3f718c-250a-4e14-9229-a102da5b2d8f">
+              <filtering>
+                <filter text="" />
+              </filtering>
+              <column-attributes>
+                <column name="sem_start" position="2" />
+                <column name="sem_end" position="3" />
+                <column name="sem_num" position="4" />
+                <column name="sem_year" position="5" />
+                <column name="sem_count" position="1" />
+              </column-attributes>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Settings/Settings.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="26" column="10" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="10" />
+            <state relative-caret-position="1344">
+              <caret line="64" column="68" selection-start-line="64" selection-start-column="68" selection-end-line="64" selection-end-column="68" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -203,6 +276,10 @@
       <find>username</find>
       <find>btn</find>
       <find>ona</find>
+      <find>return</find>
+      <find>setclass</find>
+      <find>we</find>
+      <find>subj</find>
     </findStrings>
   </component>
   <component name="FindManager">
@@ -225,7 +302,6 @@
         <option value="$PROJECT_DIR$/src/Login/AlertBox.java" />
         <option value="$PROJECT_DIR$/src/Home/homeController.kt" />
         <option value="$PROJECT_DIR$/src/About/About.fxml" />
-        <option value="$PROJECT_DIR$/src/Settings/Settings.fxml" />
         <option value="$PROJECT_DIR$/src/StudentsList/StudentsList.fxml" />
         <option value="$PROJECT_DIR$/src/Login/titleBar.fxml" />
         <option value="$PROJECT_DIR$/src/Login/Alert.java" />
@@ -239,33 +315,36 @@
         <option value="$PROJECT_DIR$/src/About/AboutController.java" />
         <option value="$PROJECT_DIR$/src/AboutLecturer/AboutLecturer.fxml" />
         <option value="$PROJECT_DIR$/src/example.fxml" />
-        <option value="$PROJECT_DIR$/src/List/List.fxml" />
         <option value="$PROJECT_DIR$/src/Dashboard/Dashboard.fxml" />
         <option value="$PROJECT_DIR$/Attendance Final.iml" />
         <option value="$PROJECT_DIR$/src/dbConnection/Manager.java" />
         <option value="$PROJECT_DIR$/src/Sidebar/Sidebar.fxml" />
         <option value="$PROJECT_DIR$/src/Login/Main.java" />
-        <option value="$PROJECT_DIR$/src/Classes/Teacher.java" />
-        <option value="$PROJECT_DIR$/src/Sidebar/SidebarController.java" />
         <option value="$PROJECT_DIR$/src/StyleCheet/style.css" />
         <option value="$APPLICATION_CONFIG_DIR$/idea.properties" />
         <option value="$PROJECT_DIR$/src/AboutApp/AboutAppController.java" />
-        <option value="$PROJECT_DIR$/src/AboutLecturer/AboutLecturerController.java" />
         <option value="$PROJECT_DIR$/src/Login/Login.fxml" />
-        <option value="$PROJECT_DIR$/src/Login/LoginController.java" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/Classes/Filters.java" />
+        <option value="$PROJECT_DIR$/src/dbConnection/Filters.java" />
+        <option value="$PROJECT_DIR$/src/Settings/Settings.fxml" />
+        <option value="$PROJECT_DIR$/src/Sidebar/SidebarController.java" />
         <option value="$PROJECT_DIR$/src/Attendance/Attendance.fxml" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/3f3abf20-74da-4637-9f0e-7a7df63aff81/console.sql" />
+        <option value="$PROJECT_DIR$/src/Classes/Person.java" />
+        <option value="$PROJECT_DIR$/src/List/List.fxml" />
         <option value="$PROJECT_DIR$/src/Dashboard/DashboardController.java" />
         <option value="$PROJECT_DIR$/src/Login/LoginModel.java" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/dbConnection/Connect.java" />
-        <option value="$PROJECT_DIR$/src/Classes/Person.java" />
+        <option value="$PROJECT_DIR$/src/Classes/Teacher.java" />
+        <option value="$PROJECT_DIR$/src/AboutLecturer/AboutLecturerController.java" />
         <option value="$PROJECT_DIR$/src/Classes/Student.java" />
-        <option value="$PROJECT_DIR$/src/Classes/Filters.java" />
-        <option value="$PROJECT_DIR$/src/Attendance/AttendanceController.java" />
-        <option value="$PROJECT_DIR$/src/dbConnection/Filters.java" />
-        <option value="$PROJECT_DIR$/src/dbConnection/Operations.java" />
         <option value="$PROJECT_DIR$/src/List/ListController.java" />
+        <option value="$PROJECT_DIR$/src/Attendance/AttendanceController.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
+        <option value="$PROJECT_DIR$/src/Login/LoginController.java" />
+        <option value="$PROJECT_DIR$/src/dbConnection/Operations.java" />
+        <option value="$PROJECT_DIR$/src/Settings/Settings.java" />
       </list>
     </option>
   </component>
@@ -280,7 +359,7 @@
     <option name="x" value="10" />
     <option name="y" value="40" />
     <option name="width" value="668" />
-    <option name="height" value="718" />
+    <option name="height" value="354" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -289,11 +368,47 @@
     <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="PackagesPane" proportions="" version="1">
+    <navigator proportions="" version="1">
       <flattenPackages PackagesPane="false" />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Attendance Final" type="58d84e3e:PackageViewProjectNode" />
+              <item name="Attendance Final" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="Attendance Final" type="58d84e3e:PackageViewProjectNode" />
+              <item name="Attendance Final" type="616d4139:PackageViewModuleNode" />
+              <item name="AboutApp" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="Attendance Final" type="58d84e3e:PackageViewProjectNode" />
+              <item name="Attendance Final" type="616d4139:PackageViewModuleNode" />
+              <item name="AboutLecturer" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="Attendance Final" type="58d84e3e:PackageViewProjectNode" />
+              <item name="Attendance Final" type="616d4139:PackageViewModuleNode" />
+              <item name="Attendance" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="Attendance Final" type="58d84e3e:PackageViewProjectNode" />
+              <item name="Attendance Final" type="616d4139:PackageViewModuleNode" />
+              <item name="dbConnection" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="Attendance Final" type="58d84e3e:PackageViewProjectNode" />
+              <item name="Attendance Final" type="616d4139:PackageViewModuleNode" />
+              <item name="Login" type="1f31426a:PackageElementNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scope">
         <subPane subId="Scope 'Production'; set:Production; class com.intellij.psi.search.scope.ProjectProductionScope">
           <expand>
@@ -310,43 +425,75 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Attendance Final" type="58d84e3e:PackageViewProjectNode" />
-              <item name="Attendance Final" type="616d4139:PackageViewModuleNode" />
-            </path>
-            <path>
-              <item name="Attendance Final" type="58d84e3e:PackageViewProjectNode" />
-              <item name="Attendance Final" type="616d4139:PackageViewModuleNode" />
-              <item name="Attendance" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="Attendance Final" type="58d84e3e:PackageViewProjectNode" />
-              <item name="Attendance Final" type="616d4139:PackageViewModuleNode" />
-              <item name="Classes" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="Attendance Final" type="58d84e3e:PackageViewProjectNode" />
-              <item name="Attendance Final" type="616d4139:PackageViewModuleNode" />
-              <item name="dbConnection" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="Attendance Final" type="58d84e3e:PackageViewProjectNode" />
-              <item name="Attendance Final" type="616d4139:PackageViewModuleNode" />
-              <item name="List" type="1f31426a:PackageElementNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="Attendance Final" type="b2602c69:ProjectViewProjectNode" />
               <item name="Attendance Final" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Attendance Final" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Attendance Final" type="462c0819:PsiDirectoryNode" />
+              <item name="Database" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Attendance Final" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Attendance Final" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Attendance Final" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Attendance Final" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Attendance Final" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Attendance Final" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Attendance" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Attendance Final" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Attendance Final" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Classes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Attendance Final" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Attendance Final" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Dashboard" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Attendance Final" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Attendance Final" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="dbConnection" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Attendance Final" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Attendance Final" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="List" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Attendance Final" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Attendance Final" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Login" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Attendance Final" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Attendance Final" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Settings" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Attendance Final" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Attendance Final" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Sidebar" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -508,12 +655,14 @@
       <workItem from="1558540153325" duration="2352000" />
       <workItem from="1558542568834" duration="10552000" />
       <workItem from="1559911908501" duration="40000" />
-      <workItem from="1559911997671" duration="18373000" />
+      <workItem from="1559911997671" duration="19086000" />
+      <workItem from="1560150269755" duration="22416000" />
+      <workItem from="1559884781728" duration="16941000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53061000" />
+    <option name="totallyTimeSpent" value="93131000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -538,10 +687,10 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="1" />
-      <window_info anchor="bottom" id="Database Changes" order="2" />
-      <window_info anchor="bottom" id="Find" order="3" weight="0.3266564" />
-      <window_info anchor="bottom" id="Run" order="4" weight="0.3441358" />
-      <window_info anchor="bottom" id="Debug" order="5" weight="0.39857143" />
+      <window_info anchor="bottom" id="Database Changes" order="2" weight="0.32854864" />
+      <window_info anchor="bottom" id="Find" order="3" weight="0.32535884" />
+      <window_info anchor="bottom" id="Run" order="4" weight="0.33641976" />
+      <window_info anchor="bottom" id="Debug" order="5" weight="0.39814815" />
       <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="8" weight="0.32842416" />
@@ -554,12 +703,12 @@
       <window_info anchor="bottom" id="Messages" order="15" weight="0.31944445" />
       <window_info anchor="bottom" id="Terminal" order="16" />
       <window_info anchor="bottom" id="Inspection Results" order="17" weight="0.32988167" />
-      <window_info anchor="bottom" id="Database Console" order="18" weight="0.3287037" />
+      <window_info anchor="bottom" id="Database Console" order="18" weight="0.32854864" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="JetGradle" order="3" />
-      <window_info anchor="right" id="Database" order="4" weight="0.6255572" />
+      <window_info anchor="right" id="Database" order="4" weight="0.028231798" />
       <window_info anchor="right" id="Palette" order="5" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
@@ -593,84 +742,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar:///usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar!/jdk/Exported.class" />
-    <entry file="jar://$PROJECT_DIR$/lib/jfoenix-8.0.7.jar!/com/jfoenix/animation/alert/JFXAlertAnimation$$Lambda$1.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/jfoenix-8.0.7.jar!/com/jfoenix/animation/alert/JFXAlertAnimation$.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/jfoenix-8.0.7.jar!/com/jfoenix/animation/alert/HorizontalTransition.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/jfoenix-8.0.7.jar!/com/jfoenix/animation/JFXNodesAnimation.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-148">
-          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/sqlite-jdbc-3.23.1.jar!/sqlite-jdbc.properties">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/fontawesomefx-fontawesome-4.7.0-1.jar!/styles.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="jar:///usr/lib/jvm/java-8-openjdk/jre/lib/ext/jfxrt.jar!/version.rc" />
-    <entry file="jar://$PROJECT_DIR$/lib/fontawesomefx-commons-8.13.jar!/de/jensd/fx/glyphs/GlyphIcon.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="27" column="22" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/fontawesomefx-8.9.jar!/de/jensd/fx/glyphs/GlyphIcons.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/fontawesomefx-commons-8.13.jar!/de/jensd/fx/glyphs/GlyphIcons.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/fontawesomefx-8.9.jar!/de/jensd/fx/glyphs/GlyphsBuilder.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/fontawesomefx-commons-8.13.jar!/de/jensd/fx/glyphs/GlyphStackIcons.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/fontawesomefx-8.9.jar!/de/jensd/fx/glyphs/GlyphIcon.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2602">
-          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/lib/fontawesomefx-fontawesome-4.7.0-1.jar!/de/jensd/fx/glyphs/fontawesome/demo/FontTestFX.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -693,14 +764,6 @@
       </provider>
     </entry>
     <entry file="jar:///usr/lib/jvm/java-8-openjdk/jre/lib/ext/jfxrt.jar!/com/sun/javafx/scene/control/skin/ComboBoxListViewSkin.class" />
-    <entry file="file://$PROJECT_DIR$/src/List/List.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="35" column="25" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
     <entry file="jar:///usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar!/java/util/function/Predicate.class" />
     <entry file="jar:///usr/lib/jvm/java-8-openjdk/jre/lib/ext/jfxrt.jar!/javafx/fxml/Initializable.class" />
     <entry file="file://$PROJECT_DIR$/src/Dashboard/Dashboard.fxml">
@@ -722,14 +785,6 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dbConnection/Manager.java" />
-    <entry file="file://$PROJECT_DIR$/src/Sidebar/Sidebar.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2756">
-          <caret line="45" column="29" selection-start-line="45" selection-start-column="29" selection-end-line="45" selection-end-column="29" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
     <entry file="uml://JAVA/AboutApp">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
@@ -766,13 +821,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Classes/Teacher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Login/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="651">
@@ -790,16 +838,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Sidebar/SidebarController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="107" column="76" selection-start-line="107" selection-start-column="76" selection-end-line="107" selection-end-column="76" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/StyleCheet/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="257">
@@ -811,28 +849,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="693">
           <caret line="33" column="44" lean-forward="true" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://3f3abf20-74da-4637-9f0e-7a7df63aff81/schema/main/table/Teachers">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="484ccc28-94a3-4ef5-a592-015e61c42a53">
-          <filtering>
-            <filter text="" />
-          </filtering>
-          <column-attributes>
-            <column name="rowid" enabled="false" position="-1" />
-          </column-attributes>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AboutLecturer/AboutLecturerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1313">
-          <caret line="64" column="37" selection-start-line="64" selection-start-column="37" selection-end-line="64" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -857,30 +873,6 @@
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Login/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-247">
-          <caret line="74" column="72" selection-start-line="74" selection-start-column="72" selection-end-line="74" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://3f3abf20-74da-4637-9f0e-7a7df63aff81/schema/main/table/1625897">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="567a624f-37de-45dc-a11b-5984dec4f635">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Attendance/Attendance.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="17" column="19" lean-forward="true" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
     <entry file="jar:///usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar!/java/lang/Thread.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2139">
@@ -888,19 +880,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Login/LoginModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="36" column="26" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#432#433#0" expanded="true" />
-            <element signature="e#461#462#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
+      <provider editor-type-id="text-editor" />
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="672">
@@ -909,12 +890,143 @@
           <second_editor />
         </state>
       </provider>
-      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sidebar/Sidebar.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="45" column="29" selection-start-line="45" selection-start-column="29" selection-end-line="45" selection-end-column="29" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Settings/Settings.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="das://3f3abf20-74da-4637-9f0e-7a7df63aff81/collation/RTRIM">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="das://3f3abf20-74da-4637-9f0e-7a7df63aff81/collation/BINARY">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="das://3f3abf20-74da-4637-9f0e-7a7df63aff81/collation/NOCASE">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="das://3f3abf20-74da-4637-9f0e-7a7df63aff81/schema/main/table/sqlite_master">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="a0d086cd-e480-43b6-bf0d-5149a8b6d3f9">
+          <filtering>
+            <filter text="" />
+          </filtering>
+          <column-attributes>
+            <column name="rowid" enabled="false" position="-1" />
+          </column-attributes>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://3f3abf20-74da-4637-9f0e-7a7df63aff81/schema/main/table/Settings.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://DATABASE/3f3abf20-74da-4637-9f0e-7a7df63aff81.TABLE:main.1625897">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>DATABASE</ID>
+          <OriginalElement>3f3abf20-74da-4637-9f0e-7a7df63aff81.TABLE:main.1625897</OriginalElement>
+          <nodes>
+            <node x="" y="">3f3abf20-74da-4637-9f0e-7a7df63aff81.TABLE:main.1625897</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="62.0" y="113.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Key columns</Category>
+            <Category>Columns</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://3f3abf20-74da-4637-9f0e-7a7df63aff81/schema/main/table/12345">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="a0d086cd-e480-43b6-bf0d-5149a8b6d3f9">
+          <filtering>
+            <filter text="" />
+          </filtering>
+          <column-attributes>
+            <column name="rowid" enabled="false" position="-1" />
+          </column-attributes>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/3f3abf20-74da-4637-9f0e-7a7df63aff81/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" column="22" lean-forward="true" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Attendance/Attendance.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="30" column="126" selection-start-line="30" selection-start-column="126" selection-end-line="30" selection-end-column="126" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="das://3f3abf20-74da-4637-9f0e-7a7df63aff81/schema/main/table/Teachers">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="a0d086cd-e480-43b6-bf0d-5149a8b6d3f9">
+          <filtering>
+            <filter text="" />
+          </filtering>
+          <column-attributes>
+            <column name="rowid" enabled="false" position="-1" />
+          </column-attributes>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-openjdk/jre/lib/ext/jfxrt.jar!/javafx/fxml/FXMLLoader.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-818">
+          <caret line="458" selection-start-line="458" selection-end-line="458" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sidebar/SidebarController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="101" column="12" selection-start-line="101" selection-start-column="12" selection-end-line="101" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://3f3abf20-74da-4637-9f0e-7a7df63aff81/schema/main/table/CSC1103">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="dc3f718c-250a-4e14-9229-a102da5b2d8f">
+          <filtering>
+            <filter text="" />
+          </filtering>
+          <column-attributes>
+            <column name="rowid" enabled="false" position="-1" />
+          </column-attributes>
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Dashboard/DashboardController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2352">
-          <caret line="112" column="51" selection-start-line="112" selection-start-column="16" selection-end-line="112" selection-end-column="51" />
+        <state relative-caret-position="441">
+          <caret line="45" column="53" selection-start-line="45" selection-start-column="53" selection-end-line="45" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -923,25 +1035,92 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dbConnection/Connect.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="26" column="10" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="10" />
+        <state relative-caret-position="337">
+          <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Classes/Person.java">
+    <entry file="file://$PROJECT_DIR$/src/Classes/Teacher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
+        <state relative-caret-position="126">
+          <caret line="6" column="63" selection-start-line="6" selection-start-column="63" selection-end-line="6" selection-end-column="63" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dbConnection/Operations.java">
+    <entry file="file://$PROJECT_DIR$/src/AboutLecturer/AboutLecturerController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="90" column="32" selection-start-line="90" selection-start-column="32" selection-end-line="90" selection-end-column="32" />
+        <state relative-caret-position="43">
+          <caret line="41" column="8" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-openjdk/jre/lib/ext/jfxrt.jar!/javafx/event/EventHandler.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#281#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/List/List.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="32" column="36" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Classes/Person.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="421">
+          <caret line="57" column="4" lean-forward="true" selection-start-line="57" selection-start-column="4" selection-end-line="59" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Attendance/AttendanceController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="148" column="9" selection-start-line="148" selection-start-column="9" selection-end-line="148" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://3f3abf20-74da-4637-9f0e-7a7df63aff81/schema/main/table/1625897">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="dc3f718c-250a-4e14-9229-a102da5b2d8f">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/List/ListController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="183" column="21" selection-start-line="183" selection-start-column="21" selection-end-line="183" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Login/LoginModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-104">
+          <caret line="26" column="88" selection-start-line="26" selection-start-column="88" selection-end-line="26" selection-end-column="88" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -950,22 +1129,67 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Classes/Student.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+        <state relative-caret-position="316">
+          <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#851#852#0" expanded="true" />
+            <element signature="e#882#883#0" expanded="true" />
+            <element signature="e#930#931#0" expanded="true" />
+            <element signature="e#970#971#0" expanded="true" />
+            <element signature="e#1003#1004#0" expanded="true" />
+            <element signature="e#1032#1033#0" expanded="true" />
+            <element signature="e#1076#1077#0" expanded="true" />
+            <element signature="e#1112#1113#0" expanded="true" />
+            <element signature="e#1148#1149#0" expanded="true" />
+            <element signature="e#1178#1179#0" expanded="true" />
+            <element signature="e#1225#1226#0" expanded="true" />
+            <element signature="e#1274#1275#0" expanded="true" />
+            <element signature="e#1311#1312#0" expanded="true" />
+            <element signature="e#1344#1345#0" expanded="true" />
+            <element signature="e#1396#1397#0" expanded="true" />
+            <element signature="e#1440#1441#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Attendance/AttendanceController.java">
+    <entry file="file://$PROJECT_DIR$/src/Login/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="106" column="13" selection-start-line="106" selection-start-column="13" selection-end-line="106" selection-end-column="13" />
+        <state relative-caret-position="148">
+          <caret line="49" column="33" lean-forward="true" selection-start-line="49" selection-start-column="33" selection-end-line="49" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/List/ListController.java">
+    <entry file="das://3f3abf20-74da-4637-9f0e-7a7df63aff81/schema/main/table/Settings">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="dc3f718c-250a-4e14-9229-a102da5b2d8f">
+          <filtering>
+            <filter text="" />
+          </filtering>
+          <column-attributes>
+            <column name="sem_start" position="2" />
+            <column name="sem_end" position="3" />
+            <column name="sem_num" position="4" />
+            <column name="sem_year" position="5" />
+            <column name="sem_count" position="1" />
+          </column-attributes>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dbConnection/Operations.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="122" column="48" selection-start-line="122" selection-start-column="48" selection-end-line="122" selection-end-column="48" />
+        <state relative-caret-position="21">
+          <caret line="133" selection-start-line="133" selection-end-line="133" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Settings/Settings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1344">
+          <caret line="64" column="68" selection-start-line="64" selection-start-column="68" selection-end-line="64" selection-end-column="68" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

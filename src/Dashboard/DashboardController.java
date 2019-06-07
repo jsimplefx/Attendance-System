@@ -110,7 +110,7 @@ public class DashboardController implements Initializable {
             e.printStackTrace();
         } finally {
             try {
-                Objects.requireNonNull(rs).close();
+                rs.close();
                 conn.close(); // make sure we close the connection
             } catch (SQLException e) {
                 e.printStackTrace();
