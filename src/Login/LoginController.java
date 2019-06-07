@@ -46,6 +46,7 @@ public class LoginController implements Initializable {
         if (model.isCorrect(id.getText(), pass.getText())) {
             // switch to the home scene
             System.out.println("Welcome back fam!!"); // some background action.
+//            Operations.loadPref(); // load settings
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("../Sidebar/Sidebar.fxml"));
             Parent homeParent = loader.load();
@@ -105,4 +106,6 @@ public class LoginController implements Initializable {
             }
         });
     }
+
+
 }
