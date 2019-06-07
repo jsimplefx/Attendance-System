@@ -4,8 +4,10 @@ import Classes.Student;
 import Classes.Teacher;
 import Login.LoginModel;
 import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextField;
 import dbConnection.Connect;
+import dbConnection.Operations;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -15,10 +17,13 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 
+import javafx.event.ActionEvent;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.Calendar;
+import java.util.Map;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
@@ -28,6 +33,9 @@ public class AttendanceController implements Initializable {
 
     @FXML
     private TableView<Student> list_table;
+
+    @FXML
+    private JFXDatePicker datePicker;
 
     @FXML
     private TableColumn<Student, Integer> id_col;
@@ -45,6 +53,9 @@ public class AttendanceController implements Initializable {
     private JFXComboBox<String> subjs;
 
     @FXML
+    private JFXComboBox<String> section;
+
+    @FXML
     private JFXTextField searchFiled;
 
     // get logged in teacher
@@ -54,12 +65,15 @@ public class AttendanceController implements Initializable {
     private ObservableList<Student> students = FXCollections.observableArrayList();
 
     // get connection
-    private Connection conns = Connect.getConnect();
+    private static Connection conns = Connect.getConnect();
+
+    private Calendar cal = Calendar.getInstance();
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        LoadData(list_table, students); // load table on class start
+        Operations.LoadData(list_table, students); // load table on class start
         // define what each column is going to hold (based on student class)
         id_col.setCellValueFactory(new PropertyValueFactory<>("ID"));
         name_col.setCellValueFactory(new PropertyValueFactory<>("name"));
@@ -76,14 +90,16 @@ public class AttendanceController implements Initializable {
         }
 
         subjs.getItems().add("All");
-        String[] subs = logged.getSubjects().split(" ");
-        for (String sub : subs) {
-            subjs.getItems().add(sub);
+        Map<String, String[]> subs = logged.getSubjects();
+        for (String name : subs.keySet()) {
+            subjs.getItems().add(name);
         }
         subjs.getSelectionModel().selectFirst();
+
     }
 
-    private void updateAtten(Student stud) {
+    private static void updateAtten(Student stud) {
+        Teacher logged  = LoginModel.getLogged();
         String query = "update '" + logged.getID() + "' set present = ? where id = ?"; // sql query
         try {
             checkConn(); // check connection
@@ -94,14 +110,14 @@ public class AttendanceController implements Initializable {
             psts.execute(); // execute query
             psts.close();
             conns.close(); // close connection for now
-            System.out.println("we over!!");
+            System.out.println("done");
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
     }
 
     // this method can edit any selected row (if you have enabled editing for it)
-    public void takeAtten(TableColumn.CellEditEvent edditedcell) {
+    public void UpdateExcuse(TableColumn.CellEditEvent edditedcell) {
         Student selected = list_table.getSelectionModel().getSelectedItem(); // get the student being edited right now
         String query = "update '" + logged.getID() + "' set " + edditedcell.getTableColumn().getText().toLowerCase()
                 + " = ? where id = ?"; // sql query
@@ -126,15 +142,14 @@ public class AttendanceController implements Initializable {
     }
 
     @FXML
-    void setClass() throws SQLException {
-        if (subjs.getSelectionModel().getSelectedItem().equals("All")) {
-            LoadData(list_table, students); // load regular view
-            return; // terminate the method.
+    void setClass(ActionEvent event) throws SQLException {
+        DropFilter((JFXComboBox) event.getSource(), section, subjs, list_table, students, logged);
+        for (Student stud : students) {
+            stud.getPresent().setOnAction(e -> updateAtten(stud));
         }
-        FilterClass(list_table, students, subjs);
     }
 
-    private void checkConn() {
+    private static void checkConn() {
         // if connection is closed get it again
         try {
             if (conns.isClosed()) conns = Connect.getConnect();
