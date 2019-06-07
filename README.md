@@ -30,7 +30,7 @@
 
 ### Bugs:
 
-- filtering by subjects doesnt work (yet)
+- ~~filtering by subjects doesnt work (yet)~~(fixed)
 
 ### Screenshots:
 
