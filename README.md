@@ -40,20 +40,24 @@
 
 #### Dashboard:
 
-<img src="https://raw.githubusercontent.com/jsimplefx/Attendance-System/master/Screenshots/2019-05-23_02-35.png">
+<img src="https://raw.githubusercontent.com/jsimplefx/Attendance-System/master/Screenshots/2019-06-24_16-57.png">
 
 #### Taking attendance:
 
-<img src="https://raw.githubusercontent.com/Blacksuan19/Attendance-System/master/Screenshots/2019-05-23_02-35_1.png">
+<img src="https://raw.githubusercontent.com/Blacksuan19/Attendance-System/master/Screenshots/2019-06-24_16-57_1.png">
 
 #### Managing Students:
 
-<img src="https://raw.githubusercontent.com/Blacksuan19/Attendance-System/master/Screenshots/2019-05-23_02-35_2.png">
+<img src="https://raw.githubusercontent.com/Blacksuan19/Attendance-System/master/Screenshots/2019-06-24_16-57_2.png">
+
+#### Settings
+
+<img src="https://raw.githubusercontent.com/Blacksuan19/Attendance-System/master/Screenshots/2019-06-24_16-58.png">
 
 #### About Lecturer:
 
-<img src="https://raw.githubusercontent.com/Blacksuan19/Attendance-System/master/Screenshots/2019-05-23_02-35_3.png">
+<img src="https://raw.githubusercontent.com/Blacksuan19/Attendance-System/master/Screenshots/2019-06-24_16-57_3.png">
 
 ### About Application
 
-<img src="https://raw.githubusercontent.com/Blacksuan19/Attendance-System/master/Screenshots/2019-05-23_02-35_4.png">
+<img src="https://raw.githubusercontent.com/Blacksuan19/Attendance-System/master/Screenshots/2019-06-24_16-58_1.png">
