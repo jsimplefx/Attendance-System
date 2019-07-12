@@ -45,8 +45,8 @@ public class Operations {
         });
     }
 
-    public static void FilterClass(TableView<Student> list_table, ObservableList<Student> students,
-                            JFXComboBox<String> subjs,String diff) throws SQLException {
+    private static void FilterClass(TableView<Student> list_table, ObservableList<Student> students,
+                                    JFXComboBox<String> subjs, String diff) throws SQLException {
         Teacher logged = LoginModel.getLogged();
         list_table.setItems(students); // surpass the error when the observable list being used is the filtered one
         list_table.getItems().clear(); // clear table content before adding them again
@@ -85,52 +85,6 @@ public class Operations {
             e.printStackTrace();
         }
     }
-
-    /*
-     * needed stuff:
-     * - lecturer id to keep it unique
-     * - variable for semester number
-     * - variable for semester year
-     * - variable for current day and month
-     * - variable for class section
-     * add these together and you get the table name
-     * ex. 16258971_76_22019 (id, section, day, month, sem, year)
-     * */
-    public static String ParseTable() {
-        Teacher logged = LoginModel.getLogged();
-//        String year = Settings.getSem_year();
-//        String semnum = Settings.getSem_number();
-        Calendar cal = Calendar.getInstance();
-        int day = cal.get(Calendar.DAY_OF_MONTH);
-        int month = cal.get(Calendar.MONTH) + 1;
-        int section = 2;
-//        return logged.getID() + section + "_" + day + month + "_" + semnum + year;
-        return null;
-    }
-
-    private static void checkTable(String table, ObservableList<Student> studs, String subj) throws SQLException {
-        checkConn();
-        Teacher logged = LoginModel.getLogged();
-        DatabaseMetaData dbm = conns.getMetaData();
-        ResultSet tables = dbm.getTables(null, null, table, null); // check if that table exists
-        if (tables.next()) { // if the table exists
-            tables.close(); // here is a little lesson in trickery (i dare you to delet this)
-        } else {
-            // create table again
-            PreparedStatement pst = Objects.requireNonNull(conns).prepareStatement("create table '" + table + "' " +
-                    "as select * from '" + logged.getID() + "'"); // sql statement
-            pst.execute(); // execute statement
-            pst.close(); // close statement
-            ResultSet rs = Objects.requireNonNull(conns).createStatement()
-                    .executeQuery(" select * from '" + table + "'"); // sql statement
-            while (rs.next()) {
-                studs.add(new Student(rs.getInt("ID"), rs.getString("name"),
-                        rs.getString("gender"), rs.getString("email"), rs.getString("absences"),
-                        rs.getString("bar"), parseSubjs(rs), rs.getBoolean("present"), rs.getString("excuse")));
-            }
-        }
-    }
-
 
     public static Map<String, String[]> parseSubjs(ResultSet resultSet) throws SQLException {
         String[] subjs = resultSet.getString("subjects").split("( )");
